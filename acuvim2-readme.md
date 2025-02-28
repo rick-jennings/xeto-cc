@@ -58,30 +58,6 @@ These are the options for the direction of electricity flow that require support
 Note:  The "total" tag in Haystack is already reserved for describing the location of
 an electricity measurement.
 
-### Removing direction of electricity flow for AC electric apparent power sensors
-
-According to the math equation below, AC electric apparent power shall always be positive. This means that there should be no `net`, `export`, or `import` distinction for AC electric apparent power.
-
-```math
-Apparent Power = \sqrt{(Active Power)^2 + (Reactive Power) ^2}
-```
-
-Note:  `net`, `export`, `import`, and `total` apply to AC electric active and reactive power.
-
-### Removing direction for AC electric RMS current sensors
-
-AC electric current oscillates like a sinusoidal waveform.  An electric RMS current data point is associated with the peak value of this waveform (which is greater than zero) divided by the square root of 2.  In other words, the AC electric RMS current shall always be positive and there should be no `net`, `export`, or `import` distinction for AC electric RMS current.
-
-Note: There should be a constraint that reflects that AC electric RMS current and voltage must always be >= 0.0.
-
-### Removing direction related tags for AC electric power sensors
-
-AC electric power can be negative or positive.  However, this does not mean there needs to be `import`, `export`, and `net` variants.  It seems in practice the meter OEMs use a single data point that can be negative or positive.  I am starting to think the `import`, `export`, and `net` tags might only apply to `demand` and `energy`.  This concepts needs to be confirmed.
-
-If confirmed we should:
- - Remove `import`, `export`, and `net` variants for AC electric power sensors
- - Introduce constraints for whether the value should be negative, positive, or both
-
 ### Removing direction related tags for electric sp specs
 
 Probably makes more sense to use negative and positive values for setpoints that control bidirectional electricity flow.
@@ -94,6 +70,31 @@ TODO - might need to alter how we do power demand today:
  * Probably do not want stand alone `power` and `demand` tags
  * Should we introduce the tags `powerDemand` and `currentDemand`?
 
- ## Other
+### Specifying the type of magnitude for voltage and current
 
-Not sure how to implement "Total Phase A Current" exactly.  Is that absolute sum of import & export measured values?  Need to think if that even makes sense.
+Magnitude types:
+ * Peak
+ * Peak-to-Peak
+ * Average
+ * RMS
+
+Factors analyzing more than one signal:
+ * THFF: measured in % units
+ * THD
+ * Odd THD
+ * Even THD
+
+Factors analyzing a single signal:
+ * Crest factor: ratio of its peak (crest) value divided by its RMS value (% units)
+ * Form factor: ratio of RMS value to its average value (% units)
+ * K factor: measures heating effect caused by current harmonics (unitless).  A linear load has a K factor value of 1.  A K factor greater than one indicates the load is non-linear.  The higher the K factor the higher heating effect caused by harmonics in the system.
+
+Notes:
+ * We need a way to express a complete signal or its decomposed sinusoidal waveforms
+
+Source:
+ * https://www.allaboutcircuits.com/textbook/alternating-current/chpt-1/measurements-ac-magnitude/
+
+## Other
+
+ * Need clarification on bacnet addresses which are not specific to the input wiring for Acuvim2ElecMeter1LNOr1LLOr3LNWiring & Acuvim2ElecMeter2LLOr3LLWiring
