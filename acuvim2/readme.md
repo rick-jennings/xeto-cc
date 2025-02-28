@@ -1,13 +1,13 @@
 # Acuvim II -
 
-## Initial focus of the example
+## Example Xeto Equip Spec
 
-The initial focus is to create a Xeto device spec for the Acuvim II Series Power Meter.  Specifically Stage 1 focuses on the meter's "real-time measurements":
+This library defines Xeto device specs for the Acuvim II Series Power Meter.  Data points included so far are referred to as the meter's "real-time measurements":
 
  * BACnet: 71 BACnet objects defined in Table 6-85
  * Modbus: Associated data points defined in Tables 6.3.7, 6.3.8, & 6.3.10
 
-Note: Do not confuse Acuvim's "real-time measurements" with the 50ms or 100ms metering parameters (which are even faster and outside of Stage 1 of this initiative).
+Note: Do not confuse Acuvim's "real-time measurements" with the 50ms or 100ms metering parameters (which have not yet been modeled).
 
 Link to the Acuvim II documentation:
 https://accucdn.accuenergy.com/wp-content/uploads/Acuvim-II-Power-Meter-User-Manual-1040E1303.pdf
