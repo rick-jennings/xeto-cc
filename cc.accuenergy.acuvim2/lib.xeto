@@ -4,6 +4,7 @@ pragma: Lib <
   depends: {
     { lib: "sys", versions: "0.1.x" }
     { lib: "ph", versions: "0.1.x" }
+    { lib: "ph.attrs", versions: "0.1.x" }
     { lib: "ph.points", versions: "0.1.x" }
     { lib: "ph.points.elec", versions: "0.1.x" }
     { lib: "ph.protocols", versions: "0.1.x" }
