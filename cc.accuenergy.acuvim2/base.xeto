@@ -8,17 +8,15 @@
 
 // Device model for the Acuvim II Series Power Meter
 Acuvim2ElecMeter : AcElecMeter <abstract> {
-  /*
-  attrs: {
+  attrs: Query {
     manufacturer: ManufacturerAttr { val: "Accuenergy" }
     modelSeries: ModelSeriesAttr { val: "Acuvim II" }
     dimensionLength: DimensionLengthAttr { val: 96mm }
     dimensionWidth: DimensionWidthAttr { val: 96mm }
     dimensionHeight: DimensionHeightAttr { val: 64.3mm }
-    operatingTemp: OperatingTempAttr { val: }
-    storageTemp: StorageTempAttr { val: }
+    tempRatedMinOperating: TempRatedMinOperatingAttr { val: -25°C }
+    tempRatedMaxOperating: TempRatedMaxOperatingAttr { val: 70°C }
   }
-  */
   points: {
     freqSensor: ElecAcFreqSensor {
       modbusAddr: ModbusAddr { addr: "16384", encoding: "f4" }
