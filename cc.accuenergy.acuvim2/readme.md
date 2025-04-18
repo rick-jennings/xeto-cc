@@ -1,11 +1,6 @@
 ## Introduction
 
-This library defines Xeto device specs for the Acuvim II Series Power Meter.  Data points modeled so far are "real-time measurements" described in the following locations of the Acuvim II user manual:
-
- * Modbus register maps (Tables 6-19, 6-20, and 6-27)
- * BACnet objects (Table 6-85)
-
-Note: "real-time measurements" referenced in Section 6.3.7 of the Acuvim II user manual are different than 50ms or 100ms metering parameters.
+This library defines Xeto device specs for the Acuvim II Series Power Meter.
 
 [Acuvim II user manual](https://accucdn.accuenergy.com/wp-content/uploads/Acuvim-II-Power-Meter-User-Manual-1040E1303.pdf)
 
@@ -24,3 +19,4 @@ These configuration settings must be applied to the Acuvim II for the Xeto specs
 
  * Table 6-20 shows "R/W" as the access property for modbus registers.  These registers are modeled as having read only access at this time.
  * A subset of the BACnet addresses in Table 6-85 do not describe the semantic differences between wiring configs as shown for Table 6-27.
+ * Might need to support sunspec scale factors (example modbus address 50101)
