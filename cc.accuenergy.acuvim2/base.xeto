@@ -8,137 +8,16 @@
 
 // Device model for the Acuvim II Series Power Meter
 Acuvim2ElecMeter : AcElecMeter <abstract> {
-  /*
-  attrs: {
+  attrs: Query {
     manufacturer: ManufacturerAttr { val: "Accuenergy" }
     modelSeries: ModelSeriesAttr { val: "Acuvim II" }
     dimensionLength: DimensionLengthAttr { val: 96mm }
     dimensionWidth: DimensionWidthAttr { val: 96mm }
     dimensionHeight: DimensionHeightAttr { val: 64.3mm }
-    operatingTemp: OperatingTempAttr { val: }
-    storageTemp: StorageTempAttr { val: }
+    tempRatedMinOperating: TempRatedMinOperatingAttr { val: -25°C }
+    tempRatedMaxOperating: TempRatedMaxOperatingAttr { val: 70°C }
   }
-  */
   points: {
-    freqSensor100ms: ElecAcFreqSensor {
-      modbusAddr: ModbusAddr { addr: "12288", encoding: "f4" }
-    }
-    l1NVoltSensor100ms: ElecAcPhaseVoltSensor {
-      phaseVolt: "L1-N"
-      modbusAddr: ModbusAddr { addr: "12290", encoding: "f4" }
-    }
-    l2NVoltSensor100ms: ElecAcPhaseVoltSensor {
-      phaseVolt: "L2-N"
-      modbusAddr: ModbusAddr { addr: "12292", encoding: "f4" }
-    }
-    l3NVoltSensor100ms: ElecAcPhaseVoltSensor {
-      phaseVolt: "L3-N"
-      modbusAddr: ModbusAddr { addr: "12294", encoding: "f4" }
-    }
-    phaseAvgVoltSensor100ms: ElecAcPhaseAvgVoltSensor {
-      modbusAddr: ModbusAddr { addr: "12296", encoding: "f4" }
-    }
-    l1L2VoltSensor100ms: ElecAcLineVoltSensor {
-      lineVolt: "L1-L2"
-      modbusAddr: ModbusAddr { addr: "12298", encoding: "f4" }
-    }
-    l2L3VoltSensor100ms: ElecAcLineVoltSensor {
-      lineVolt: "L2-L3"
-      modbusAddr: ModbusAddr { addr: "12300", encoding: "f4" }
-    }
-    l3L1VoltSensor100ms: ElecAcLineVoltSensor {
-      lineVolt: "L3-L1"
-      modbusAddr: ModbusAddr { addr: "12302", encoding: "f4" }
-    }
-    lineAvgVoltSensor100ms: ElecAcLineAvgVoltSensor {
-      modbusAddr: ModbusAddr { addr: "12304", encoding: "f4" }
-    }
-    l1CurrentSensor100ms: ElecAcLineCurrentSensor {
-      lineCurrent: "L1"
-      modbusAddr: ModbusAddr { addr: "12306", encoding: "f4" }
-    }
-    l2CurrentSensor100ms: ElecAcLineCurrentSensor {
-      lineCurrent: "L2"
-      modbusAddr: ModbusAddr { addr: "12308", encoding: "f4" }
-    }
-    l3CurrentSensor100ms: ElecAcLineCurrentSensor {
-      lineCurrent: "L3"
-      modbusAddr: ModbusAddr { addr: "12310", encoding: "f4" }
-    }
-    lineAvgCurrentSensor100ms: ElecAcLineAvgCurrentSensor {
-      modbusAddr: ModbusAddr { addr: "12312", encoding: "f4" }
-    }
-    neutralCurrentSensor100ms: ElecAcNeutralCurrentSensor {
-      modbusAddr: ModbusAddr { addr: "12314", encoding: "f4" }
-    }
-    l1NetActivePowerSensor100ms: ElecAcPhaseNetActivePowerSensor {
-      phasePower: "L1"
-      modbusAddr: ModbusAddr { addr: "12316", encoding: "f4", scale: "0.001" }
-    }
-    l2NetActivePowerSensor100ms: ElecAcPhaseNetActivePowerSensor {
-      phasePower: "L2"
-      modbusAddr: ModbusAddr { addr: "12318", encoding: "f4", scale: "0.001" }
-    }
-    l3NetActivePowerSensor100ms: ElecAcPhaseNetActivePowerSensor {
-      phasePower: "L3"
-      modbusAddr: ModbusAddr { addr: "12320", encoding: "f4", scale: "0.001" }
-    }
-    totalNetActivePowerSensor100ms: ElecAcTotalNetActivePowerSensor {
-      modbusAddr: ModbusAddr { addr: "12322", encoding: "f4", scale: "0.001" }
-    }
-    l1NetReactivePowerSensor100ms: ElecAcPhaseNetReactivePowerSensor {
-      phasePower: "L1"
-      modbusAddr: ModbusAddr { addr: "12324", encoding: "f4", scale: "0.001" }
-    }
-    l2NetReactivePowerSensor100ms: ElecAcPhaseNetReactivePowerSensor {
-      phasePower: "L2"
-      modbusAddr: ModbusAddr { addr: "12326", encoding: "f4", scale: "0.001" }
-    }
-    l3NetReactivePowerSensor100ms: ElecAcPhaseNetReactivePowerSensor {
-      phasePower: "L3"
-      modbusAddr: ModbusAddr { addr: "12328", encoding: "f4", scale: "0.001" }
-    }
-    totalNetReactivePowerSensor100ms: ElecAcTotalNetReactivePowerSensor {
-      modbusAddr: ModbusAddr { addr: "12330", encoding: "f4", scale: "0.001" }
-    }
-    l1NetApparentPowerSensor100ms: ElecAcPhaseNetApparentPowerSensor {
-      phasePower: "L1"
-      modbusAddr: ModbusAddr { addr: "12332", encoding: "f4", scale: "0.001" }
-    }
-    l2NetApparentPowerSensor100ms: ElecAcPhaseNetApparentPowerSensor {
-      phasePower: "L2"
-      modbusAddr: ModbusAddr { addr: "12334", encoding: "f4", scale: "0.001" }
-    }
-    l3NetApparentPowerSensor100ms: ElecAcPhaseNetApparentPowerSensor {
-      phasePower: "L3"
-      modbusAddr: ModbusAddr { addr: "12336", encoding: "f4", scale: "0.001" }
-    }
-    totalNetApparentPowerSensor100ms: ElecAcTotalNetApparentPowerSensor {
-      modbusAddr: ModbusAddr { addr: "12338", encoding: "f4", scale: "0.001" }
-    }
-    l1PfSensor100ms: ElecAcPhasePfSensor {
-      pfTrue
-      pfIec
-      phasePf: "L1"
-      modbusAddr: ModbusAddr { addr: "12340", encoding: "f4" }
-    }
-    l2PfSensor100ms: ElecAcPhasePfSensor {
-      pfTrue
-      pfIec
-      phasePf: "L2"
-      modbusAddr: ModbusAddr { addr: "12342", encoding: "f4" }
-    }
-    l3PfSensor100ms: ElecAcPhasePfSensor {
-      pfTrue
-      pfIec
-      phasePf: "L3"
-      modbusAddr: ModbusAddr { addr: "12344", encoding: "f4" }
-    }
-    totalPfSensor100ms: ElecAcTotalPfSensor {
-      pfTrue
-      pfIec
-      modbusAddr: ModbusAddr { addr: "12346", encoding: "f4" }
-    }
     freqSensor: ElecAcFreqSensor {
       modbusAddr: ModbusAddr { addr: "16384", encoding: "f4" }
       bacnetAddr: BacnetAddr { addr: "AI1" }
@@ -435,6 +314,125 @@ Acuvim2ElecMeter : AcElecMeter <abstract> {
       totalHarmonicDistortion
       modbusAddr: ModbusAddr { addr: "16481", encoding: "s2", scale: "0.01" }
       bacnetAddr: BacnetAddr { addr: "AI71" }
+    }
+    freqSensor100ms: ElecAcFreqSensor {
+      modbusAddr: ModbusAddr { addr: "12288", encoding: "f4" }
+    }
+    l1NVoltSensor100ms: ElecAcPhaseVoltSensor {
+      phaseVolt: "L1-N"
+      modbusAddr: ModbusAddr { addr: "12290", encoding: "f4" }
+    }
+    l2NVoltSensor100ms: ElecAcPhaseVoltSensor {
+      phaseVolt: "L2-N"
+      modbusAddr: ModbusAddr { addr: "12292", encoding: "f4" }
+    }
+    l3NVoltSensor100ms: ElecAcPhaseVoltSensor {
+      phaseVolt: "L3-N"
+      modbusAddr: ModbusAddr { addr: "12294", encoding: "f4" }
+    }
+    phaseAvgVoltSensor100ms: ElecAcPhaseAvgVoltSensor {
+      modbusAddr: ModbusAddr { addr: "12296", encoding: "f4" }
+    }
+    l1L2VoltSensor100ms: ElecAcLineVoltSensor {
+      lineVolt: "L1-L2"
+      modbusAddr: ModbusAddr { addr: "12298", encoding: "f4" }
+    }
+    l2L3VoltSensor100ms: ElecAcLineVoltSensor {
+      lineVolt: "L2-L3"
+      modbusAddr: ModbusAddr { addr: "12300", encoding: "f4" }
+    }
+    l3L1VoltSensor100ms: ElecAcLineVoltSensor {
+      lineVolt: "L3-L1"
+      modbusAddr: ModbusAddr { addr: "12302", encoding: "f4" }
+    }
+    lineAvgVoltSensor100ms: ElecAcLineAvgVoltSensor {
+      modbusAddr: ModbusAddr { addr: "12304", encoding: "f4" }
+    }
+    l1CurrentSensor100ms: ElecAcLineCurrentSensor {
+      lineCurrent: "L1"
+      modbusAddr: ModbusAddr { addr: "12306", encoding: "f4" }
+    }
+    l2CurrentSensor100ms: ElecAcLineCurrentSensor {
+      lineCurrent: "L2"
+      modbusAddr: ModbusAddr { addr: "12308", encoding: "f4" }
+    }
+    l3CurrentSensor100ms: ElecAcLineCurrentSensor {
+      lineCurrent: "L3"
+      modbusAddr: ModbusAddr { addr: "12310", encoding: "f4" }
+    }
+    lineAvgCurrentSensor100ms: ElecAcLineAvgCurrentSensor {
+      modbusAddr: ModbusAddr { addr: "12312", encoding: "f4" }
+    }
+    neutralCurrentSensor100ms: ElecAcNeutralCurrentSensor {
+      modbusAddr: ModbusAddr { addr: "12314", encoding: "f4" }
+    }
+    l1NetActivePowerSensor100ms: ElecAcPhaseNetActivePowerSensor {
+      phasePower: "L1"
+      modbusAddr: ModbusAddr { addr: "12316", encoding: "f4", scale: "0.001" }
+    }
+    l2NetActivePowerSensor100ms: ElecAcPhaseNetActivePowerSensor {
+      phasePower: "L2"
+      modbusAddr: ModbusAddr { addr: "12318", encoding: "f4", scale: "0.001" }
+    }
+    l3NetActivePowerSensor100ms: ElecAcPhaseNetActivePowerSensor {
+      phasePower: "L3"
+      modbusAddr: ModbusAddr { addr: "12320", encoding: "f4", scale: "0.001" }
+    }
+    totalNetActivePowerSensor100ms: ElecAcTotalNetActivePowerSensor {
+      modbusAddr: ModbusAddr { addr: "12322", encoding: "f4", scale: "0.001" }
+    }
+    l1NetReactivePowerSensor100ms: ElecAcPhaseNetReactivePowerSensor {
+      phasePower: "L1"
+      modbusAddr: ModbusAddr { addr: "12324", encoding: "f4", scale: "0.001" }
+    }
+    l2NetReactivePowerSensor100ms: ElecAcPhaseNetReactivePowerSensor {
+      phasePower: "L2"
+      modbusAddr: ModbusAddr { addr: "12326", encoding: "f4", scale: "0.001" }
+    }
+    l3NetReactivePowerSensor100ms: ElecAcPhaseNetReactivePowerSensor {
+      phasePower: "L3"
+      modbusAddr: ModbusAddr { addr: "12328", encoding: "f4", scale: "0.001" }
+    }
+    totalNetReactivePowerSensor100ms: ElecAcTotalNetReactivePowerSensor {
+      modbusAddr: ModbusAddr { addr: "12330", encoding: "f4", scale: "0.001" }
+    }
+    l1NetApparentPowerSensor100ms: ElecAcPhaseNetApparentPowerSensor {
+      phasePower: "L1"
+      modbusAddr: ModbusAddr { addr: "12332", encoding: "f4", scale: "0.001" }
+    }
+    l2NetApparentPowerSensor100ms: ElecAcPhaseNetApparentPowerSensor {
+      phasePower: "L2"
+      modbusAddr: ModbusAddr { addr: "12334", encoding: "f4", scale: "0.001" }
+    }
+    l3NetApparentPowerSensor100ms: ElecAcPhaseNetApparentPowerSensor {
+      phasePower: "L3"
+      modbusAddr: ModbusAddr { addr: "12336", encoding: "f4", scale: "0.001" }
+    }
+    totalNetApparentPowerSensor100ms: ElecAcTotalNetApparentPowerSensor {
+      modbusAddr: ModbusAddr { addr: "12338", encoding: "f4", scale: "0.001" }
+    }
+    l1PfSensor100ms: ElecAcPhasePfSensor {
+      pfTrue
+      pfIec
+      phasePf: "L1"
+      modbusAddr: ModbusAddr { addr: "12340", encoding: "f4" }
+    }
+    l2PfSensor100ms: ElecAcPhasePfSensor {
+      pfTrue
+      pfIec
+      phasePf: "L2"
+      modbusAddr: ModbusAddr { addr: "12342", encoding: "f4" }
+    }
+    l3PfSensor100ms: ElecAcPhasePfSensor {
+      pfTrue
+      pfIec
+      phasePf: "L3"
+      modbusAddr: ModbusAddr { addr: "12344", encoding: "f4" }
+    }
+    totalPfSensor100ms: ElecAcTotalPfSensor {
+      pfTrue
+      pfIec
+      modbusAddr: ModbusAddr { addr: "12346", encoding: "f4" }
     }
     l1Ihd2ndCurrentSensor: ElecAcLineStatCurrentSensor {
       elecAcHarmonicOrder: 2
