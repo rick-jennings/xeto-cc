@@ -1,0 +1,56 @@
+//
+// Copyright (c) 2025, Project-Haystack
+// Licensed under the Academic Free License version 3.0
+//
+// History:
+//   19 Apr 2025  Rick Jennings  Creation
+//
+
+// Device model for an AC EVSE port that exchanges OCPP data
+OcppAcEvsePort : EvsePort & AcElecMeter {
+  points: {
+    EvseStatusSensor
+    ChargingStateSensor
+    OcppChargePointErrorSensor
+    ElecAcImportCurrentMaxSp
+    ElecAcCurrentSensor
+    ElecAcImportActivePowerSensor
+    ElecAcVoltSensor
+    ElecAcImportActiveEnergySensor
+  }
+}
+
+// Device model for the Grizzl-E Smart 40A
+GrizzlESmart : EvseDispenser {
+  singlePhase
+  attrs: Query {
+    manufacturer: ManufacturerAttr { val: "Grizzl-E" }
+    modelSeries: ModelSeriesAttr { val: "Smart" }
+    modelNumber: ModelNumberAttr { val: "GRS-14-24-PB" }
+    dimensionLength: DimensionLengthAttr { val: 10.25in }
+    dimensionWidth: DimensionWidthAttr { val: 6.25in }
+    dimensionHeight: DimensionHeightAttr { val: 3.75in }
+    tempRatedMinOperating: TempRatedMinOperatingAttr { val: -30°C }
+    tempRatedMaxOperating: TempRatedMaxOperatingAttr { val: 50°C }
+    elecAcRatedInputMaxCurrentAttr: ElecAcRatedInputMaxCurrentAttr { val: 40A }
+    elecAcRatedInputLineToLineMinVoltAttr: ElecAcRatedInputLineToLineMinVoltAttr { val: 208V }
+    elecAcRatedInputLineToLineMaxVoltAttr: ElecAcRatedInputLineToLineMaxVoltAttr { val: 240V }
+    elecAcRatedInputFreqAttr: ElecAcRatedInputFreqAttr { val: 60Hz }
+  }
+  points: {
+    OcppChargePointStatusSensor
+    OcppChargePointErrorSensor
+  }
+  equips: {
+    evsePort1: OcppAcEvsePort & EvseCable {
+      singlePhase
+      attrs: Query {
+        elecAcRatedInputMaxCurrentAttr: ElecAcRatedInputMaxCurrentAttr { val: 40A }
+        elecAcRatedInputLineToLineMinVoltAttr: ElecAcRatedInputLineToLineMinVoltAttr { val: 208V }
+        elecAcRatedInputLineToLineMaxVoltAttr: ElecAcRatedInputLineToLineMaxVoltAttr { val: 240V }
+        elecAcRatedInputFreqAttr: ElecAcRatedInputFreqAttr { val: 60Hz }
+        evseCableLength: EvseCableLengthAttr { val: 25ft }
+      }
+    }
+  }
+}
