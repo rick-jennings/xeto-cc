@@ -54,3 +54,17 @@ ChargingState : Enum {
 }
 
 ChargingStateSensor : EnumPoint & SensorPoint { enum: ChargingState }
+
+EvseCableLengthAttr : StrAttr { evseCableLength }
+
+// Frequency attribute for the asset
+ElecFreqAttr : NumberAttr <abstract> { elec, freq }
+
+// AC frequency attribute for the asset
+ElecAcFreqAttr : ElecFreqAttr <abstract> { ac }
+
+// AC frequency rating of the asset
+ElecAcRatedFreqAttr : ElecAcFreqAttr <abstract> { rated }
+
+// AC frequency input rating of the asset
+ElecAcRatedInputFreqAttr : ElecAcRatedFreqAttr { input }
