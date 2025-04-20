@@ -1,0 +1,56 @@
+//
+// Copyright (c) 2025, Project-Haystack
+// Licensed under the Academic Free License version 3.0
+//
+// History:
+//   19 Apr 2025  Rick Jennings  Creation
+//
+
+OcppChargePointStatus : Enum {
+  available
+  unavailable
+  fault
+}
+
+OcppChargePointStatusSensor : EnumPoint & SensorPoint { enum: OcppChargePointStatus }
+
+OcppChargePointError : Enum {
+  connectorLockFailure
+  evCommunicationError
+  groundFailure
+  highTemperature
+  internalError
+  localListConflict
+  noError
+  otherError
+  overCurrentFailure
+  overVoltage
+  powerMeterFailure
+  powerSwitchFailure
+  readerFailure
+  resetFailure
+  underVoltage
+  weakSignal
+}
+
+OcppChargePointErrorSensor : EnumPoint & SensorPoint { enum: OcppChargePointError }
+
+EvseStatus : Enum {
+  available
+  occupied
+  reserved
+  unavailable
+  fault
+}
+
+EvseStatusSensor : EnumPoint & SensorPoint { enum: EvseStatus }
+
+ChargingState : Enum {
+  charging
+  evConnected
+  suspendedEV
+  suspendedEVSE
+  idle
+}
+
+ChargingStateSensor : EnumPoint & SensorPoint { enum: ChargingState }

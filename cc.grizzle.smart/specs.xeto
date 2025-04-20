@@ -1,0 +1,30 @@
+//
+// Copyright (c) 2025, Project-Haystack
+// Licensed under the Academic Free License version 3.0
+//
+// History:
+//   19 Apr 2025  Rick Jennings  Creation
+//
+
+// Device model for an AC EVSE port that exchanges OCPP data
+OcppAcEvsePort : EvsePort & AcElecMeter {
+  points: {
+    EvseStatusSensor
+    ChargingStateSensor
+    OcppChargePointErrorSensor
+    ElecAcImportCurrentMaxSp
+    ElecAcCurrentSensor
+    ElecAcImportActivePowerSensor
+    ElecAcVoltSensor
+    ElecAcImportActiveEnergySensor
+  }
+}
+
+// Device model for the Grizzl-E Smart 40A
+GrizzlESmart : EvseDispenser {
+  OcppChargePointStatusSensor
+  OcppChargePointErrorSensor
+  equips: {
+    OcppAcEvsePort
+  }
+}
