@@ -1,0 +1,125 @@
+//
+// Copyright (c) 2025, Project-Haystack
+// Licensed under the Academic Free License version 3.0
+//
+// History:
+//   20 Apr 2025  Rick Jennings  Creation
+//
+
+OcppChargePointStatus : Enum {
+  available
+  unavailable
+  fault
+}
+
+OcppChargePointStatusSensor : EnumPoint & SensorPoint { enum: OcppChargePointStatus }
+
+OcppChargePointError : Enum {
+  connectorLockFailure
+  evCommunicationError
+  groundFailure
+  highTemperature
+  internalError
+  localListConflict
+  noError
+  otherError
+  overCurrentFailure
+  overVoltage
+  powerMeterFailure
+  powerSwitchFailure
+  readerFailure
+  resetFailure
+  underVoltage
+  weakSignal
+}
+
+OcppChargePointErrorSensor : EnumPoint & SensorPoint { enum: OcppChargePointError }
+
+EvseStatus : Enum {
+  available
+  occupied
+  reserved
+  unavailable
+  fault
+}
+
+EvseStatusSensor : EnumPoint & SensorPoint { enum: EvseStatus }
+
+ChargingState : Enum {
+  charging
+  evConnected
+  suspendedEV
+  suspendedEVSE
+  idle
+}
+
+ChargingStateSensor : EnumPoint & SensorPoint { enum: ChargingState }
+
+// Frequency attribute for the asset
+ElecFreqAttr : NumberAttr <abstract> { elec, freq }
+
+// AC frequency attribute for the asset
+ElecAcFreqAttr : ElecFreqAttr <abstract> { ac }
+
+// AC frequency rating of the asset
+ElecAcRatedFreqAttr : ElecAcFreqAttr <abstract> { rated }
+
+// AC frequency input rating of the asset
+ElecAcRatedInputFreqAttr : ElecAcRatedFreqAttr { input }
+
+// DC voltage attribute for the asset
+ElecDcVoltAttr : ElecVoltAttr <abstract> { dc }
+
+// DC voltage rating of the asset
+ElecDcRatedVoltAttr : ElecDcVoltAttr <abstract> { rated }
+
+// DC voltage input rating of the asset
+ElecDcRatedInputVoltAttr : ElecDcRatedVoltAttr <abstract> { input }
+
+// Minimum DC voltage input rating of the asset
+ElecDcRatedInputMinVoltAttr : ElecDcRatedInputVoltAttr { min }
+
+// Maximum DC voltage input rating of the asset
+ElecDcRatedInputMaxVoltAttr : ElecDcRatedInputVoltAttr { max }
+
+// DC current attribute for the asset
+ElecDcCurrentAttr : ElecCurrentAttr <abstract> { dc }
+
+// DC current rating of the asset
+ElecDcRatedCurrentAttr : ElecDcCurrentAttr <abstract> { rated }
+
+// DC current input rating of the asset
+ElecDcRatedInputCurrentAttr : ElecDcRatedCurrentAttr <abstract> { input }
+
+// Maximum DC current input rating of the asset
+ElecDcRatedInputMaxCurrentAttr : ElecDcRatedInputCurrentAttr { max }
+
+// DC voltage output rating of the asset
+ElecDcRatedOutputVoltAttr : ElecDcRatedVoltAttr <abstract> { output }
+
+// Minimum DC voltage output rating of the asset
+ElecDcRatedOutputMinVoltAttr : ElecDcRatedOutputVoltAttr { min }
+
+// Maximum DC voltage output rating of the asset
+ElecDcRatedOutputMaxVoltAttr : ElecDcRatedOutputVoltAttr { max }
+
+// DC current output rating of the asset
+ElecDcRatedOutputCurrentAttr : ElecDcRatedCurrentAttr <abstract> { output }
+
+// Maximum DC current output rating of the asset
+ElecDcRatedOutputMaxCurrentAttr : ElecDcRatedOutputCurrentAttr { max }
+
+// Electric power attribute for the asset
+ElecPowerAttr : NumberAttr <abstract> { elec, power }
+
+// DC power attribute for the asset
+ElecDcPowerAttr : ElecPowerAttr <abstract> { dc }
+
+// DC power rating of the asset
+ElecDcRatedPowerAttr : ElecDcPowerAttr <abstract> { rated }
+
+// DC power output rating of the asset
+ElecDcRatedOutputPowerAttr : ElecDcRatedPowerAttr <abstract> { output }
+
+// Maximum DC power output rating of the asset
+ElecDcRatedOutputMaxPowerAttr : ElecDcRatedOutputPowerAttr { max }

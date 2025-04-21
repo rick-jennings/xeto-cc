@@ -1,0 +1,75 @@
+//
+// Copyright (c) 2025, Project-Haystack
+// Licensed under the Academic Free License version 3.0
+//
+// History:
+//   20 Apr 2025  Rick Jennings  Creation
+//
+
+// Device model for a DC EVSE port that exchanges OCPP data
+OcppDcEvsePort : EvsePort & DcElecMeter {
+  points: {
+    EvseStatusSensor
+    ChargingStateSensor
+    OcppChargePointErrorSensor
+    ElecDcImportCurrentMaxSp
+    ElecDcImportPowerMaxSp
+    ElecDcImportCurrentSensor
+    ElecDcImportPowerSensor
+    ElecDcVoltSensor
+    ElecDcImportEnergySensor
+  }
+}
+
+
+// Device model for the Heliox Flex 180kW power cabinet
+HelioxFlex180kWPowerCabinet : EvsePowerConverter {
+  attrs: Query {
+    manufacturer: ManufacturerAttr { val: "Heliox" }
+    modelSeries: ModelSeriesAttr { val: "Flex" }
+    modelNumber: ModelNumberAttr { val: "HE9821001-01-XXX" }
+    dimensionLength: DimensionLengthAttr { val: 32in }
+    dimensionWidth: DimensionWidthAttr { val: 32in }
+    dimensionHeight: DimensionHeightAttr { val: 90in }
+    weight: WeightAttr { val: 1323lb }
+    tempRatedMinOperating: TempRatedMinOperatingAttr { val: -13°F }
+    tempRatedMaxOperating: TempRatedMaxOperatingAttr { val: 113°F }
+    elecAcRatedInputLineToLineNominalVolt: ElecAcRatedInputLineToLineNominalVoltAttr { val: 480V }
+    elecAcRatedInputMaxCurrent: ElecAcRatedInputMaxCurrentAttr { val: 246A }
+    elecAcRatedInputFreq: ElecAcRatedInputFreqAttr { val: 60Hz }
+    elecDcRatedOutputMaxPower: ElecDcRatedOutputMaxPowerAttr { val: 150kW }
+    elecDcRatedOutputMaxCurrent: ElecDcRatedOutputMaxCurrentAttr { val: 250A }
+    elecDcRatedOutputMinVolt: ElecDcRatedOutputMinVoltAttr { val: 150V }
+    elecDcRatedOutputMaxVolt: ElecDcRatedOutputMaxVoltAttr { val: 1000V }
+  }
+}
+
+
+// Device model for the Heliox Flex 250A dispenser
+HelioxFlex250ADispenser : EvseDispenser {
+  attrs: Query {
+    manufacturer: ManufacturerAttr { val: "Heliox" }
+    modelSeries: ModelSeriesAttr { val: "Flex" }
+    modelNumber: ModelNumberAttr { val: "HE9820006-01-XXX" }
+    dimensionLength: DimensionLengthAttr { val: 10in }
+    dimensionWidth: DimensionWidthAttr { val: 18in }
+    dimensionHeight: DimensionHeightAttr { val: 55in }
+    weight: WeightAttr { val: 220lb }
+    tempRatedMinOperating: TempRatedMinOperatingAttr { val: -13°F }
+    tempRatedMaxOperating: TempRatedMaxOperatingAttr { val: 113°F }
+  }
+  points: {
+    OcppChargePointStatusSensor
+    OcppChargePointErrorSensor
+  }
+  equips: {
+    evsePort1: OcppDcEvsePort & EvseCable {
+      attrs: Query {
+        elecDcRatedInputMaxCurrent: ElecDcRatedInputMaxCurrentAttr { val: 250A }
+        elecDcRatedInputMinVolt: ElecDcRatedInputMinVoltAttr { val: 150V }
+        elecDcRatedInputMaxVolt: ElecDcRatedInputMaxVoltAttr { val: 1000V }
+        // FUTURE: add elecRef to power cabinet
+      }
+    }
+  }
+}
