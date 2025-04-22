@@ -1,0 +1,23 @@
+//
+// Copyright (c) 2025, Project-Haystack
+// Licensed under the Academic Free License version 3.0
+//
+// History:
+//   22 Apr 2025  Rick Jennings  Creation
+//
+
+// Device model for an example net AC electric meter
+ExampleNetAcElecMeter : AcElecMeter {
+  points: {
+    ElecAcTotalNetActiveDemandSensor
+    ElecAcTotalNetReactiveDemandSensor
+    ElecAcTotalNetApparentDemandSensor
+    ElecAcTotalImportActiveEnergySensor
+    ElecAcTotalExportActiveEnergySensor
+    ElecAcTotalNetActiveEnergySensor
+    ElecAcTotalImportReactiveEnergySensor
+    ElecAcTotalExportReactiveEnergySensor
+    ElecAcTotalNetReactiveEnergySensor
+    ElecAcTotalNetApparentEnergySensor
+  }
+}

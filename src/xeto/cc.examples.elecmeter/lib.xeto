@@ -1,0 +1,13 @@
+pragma: Lib <
+  doc: "Device model for an example net AC electric meter"
+  version: "0.1.1"
+  depends: {
+    { lib: "sys", versions: "0.1.x" }
+    { lib: "ph", versions: "0.1.x" }
+    { lib: "ph.points", versions: "0.1.x" }
+  }
+  org: {
+    dis: "Project Haystack"
+    uri: "https://project-haystack.org/"
+  }
+>
