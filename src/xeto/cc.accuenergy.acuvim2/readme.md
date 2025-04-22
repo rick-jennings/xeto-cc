@@ -19,27 +19,6 @@ These configuration settings must be applied to the Acuvim II for the Xeto specs
 
 **Note:**  The Xeto spec chosen from this library shall be based on the voltage input wiring config as well.
 
-## Interpreting points
-
-The order of point slots follow these rules:
- * Points that support BACnet come first
-    * Note: This meter has significantly more points that only support modbus than points that support modbus and BACnet.
-
-The following rules apply to slot names:
- * Same name as the spec name with "ElecAc" removed (since this meter only monitors AC electricity)
- * Generic choice and enum names are replaced with the selected choice or enum value
- * First letter is made lowercase
-
-Also, these special rules apply to point slot names:
- * Points defined in Section 6.3.6 100ms Metering Parameters include a suffix "100ms".
- * Points defined in Section 6.3.16 SunSpec Registers include a prefix "sunspec".
-
-## Interpreting attrs
-
-The following rules apply to slot names:
- * Same name as the attr name with "Attr" removed
- * First letter is made lowercase
-
 ## Notes
 
  * Table 6-20 shows "R/W" as the access property for modbus registers.  These registers are modeled as having read only access at this time.
