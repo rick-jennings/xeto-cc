@@ -8,7 +8,7 @@ pragma: Lib <
     { lib: "ph.attrs", versions: "0.1.x" }
   }
   org: {
-    dis: "TODO"
-    uri: "TODO"
+    dis: "Project Haystack"
+    uri: "https://project-haystack.org/"
   }
 >
