@@ -3,6 +3,7 @@
 This library defines Xeto device specs for the Heliox Flex 180kW power cabinet and 250A dispenser by Siemens.
 
 [Heliox Flex 180kW Power Cabinet](https://www.heliox-energy.com/us-products/flex-180kw-rapid-charger)
+
 [Heliox Flex 250A Dispenser](https://www.heliox-energy.com/us-products/flex-250-a-dispenser)
 
 ## Notes

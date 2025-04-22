@@ -9,707 +9,732 @@
 // Device model for the Acuvim II Series Power Meter
 Acuvim2ElecMeter : AcElecMeter <abstract> {
   attrs: Query {
-    manufacturer: ManufacturerAttr { val: "Accuenergy" }
-    modelSeries: ModelSeriesAttr { val: "Acuvim II" }
-    dimensionLength: DimensionLengthAttr { val: 96mm }
-    dimensionWidth: DimensionWidthAttr { val: 96mm }
-    dimensionHeight: DimensionHeightAttr { val: 64.3mm }
-    tempRatedMinOperating: TempRatedMinOperatingAttr { val: -25°C }
-    tempRatedMaxOperating: TempRatedMaxOperatingAttr { val: 70°C }
+    ManufacturerAttr { val: "Accuenergy" }
+    ModelSeriesAttr { val: "Acuvim II" }
+    DimensionLengthAttr { val: 96mm }
+    DimensionWidthAttr { val: 96mm }
+    DimensionHeightAttr { val: 64.3mm }
+    TempRatedMinOperatingAttr { val: -25°C }
+    TempRatedMaxOperatingAttr { val: 70°C }
   }
   points: {
-    freqSensor: ElecAcFreqSensor {
+    ElecAcFreqSensor {
       modbusAddr: ModbusAddr { addr: "16384", encoding: "f4" }
       bacnetAddr: BacnetAddr { addr: "AI1" }
     }
-    l1NVoltSensor: ElecAcPhaseVoltSensor {
+    ElecAcPhaseVoltSensor {
       phaseVolt: "L1-N"
       modbusAddr: ModbusAddr { addr: "16386", encoding: "f4" }
       bacnetAddr: BacnetAddr { addr: "AI2" }
     }
-    l2NVoltSensor: ElecAcPhaseVoltSensor {
+    ElecAcPhaseVoltSensor {
       phaseVolt: "L2-N"
       modbusAddr: ModbusAddr { addr: "16388", encoding: "f4" }
       bacnetAddr: BacnetAddr { addr: "AI3" }
     }
-    l3NVoltSensor: ElecAcPhaseVoltSensor {
+    ElecAcPhaseVoltSensor {
       phaseVolt: "L3-N"
       modbusAddr: ModbusAddr { addr: "16390", encoding: "f4" }
       bacnetAddr: BacnetAddr { addr: "AI4" }
     }
-    phaseAvgVoltSensor: ElecAcPhaseAvgVoltSensor {
+    ElecAcPhaseAvgVoltSensor {
       modbusAddr: ModbusAddr { addr: "16392", encoding: "f4" }
       bacnetAddr: BacnetAddr { addr: "AI5" }
     }
-    l1L2VoltSensor : ElecAcLineVoltSensor {
+    ElecAcLineVoltSensor {
       lineVolt: "L1-L2"
       modbusAddr: ModbusAddr { addr: "16394", encoding: "f4" }
       bacnetAddr: BacnetAddr { addr: "AI6" }
     }
-    l2L3VoltSensor: ElecAcLineVoltSensor {
+    ElecAcLineVoltSensor {
       lineVolt: "L2-L3"
       modbusAddr: ModbusAddr { addr: "16396", encoding: "f4" }
       bacnetAddr: BacnetAddr { addr: "AI7" }
     }
-    l3L1VoltSensor: ElecAcLineVoltSensor {
+    ElecAcLineVoltSensor {
       lineVolt: "L3-L1"
       modbusAddr: ModbusAddr { addr: "16398", encoding: "f4" }
       bacnetAddr: BacnetAddr { addr: "AI8" }
     }
-    lineAvgVoltSensor: ElecAcLineAvgVoltSensor {
+    ElecAcLineAvgVoltSensor {
       modbusAddr: ModbusAddr { addr: "16400", encoding: "f4" }
       bacnetAddr: BacnetAddr { addr: "AI9" }
     }
-    l1CurrentSensor: ElecAcLineCurrentSensor {
+    ElecAcLineCurrentSensor {
       lineCurrent: "L1"
       modbusAddr: ModbusAddr { addr: "16402", encoding: "f4" }
       bacnetAddr: BacnetAddr { addr: "AI10" }
     }
-    l2CurrentSensor: ElecAcLineCurrentSensor {
+    ElecAcLineCurrentSensor {
       lineCurrent: "L2"
       modbusAddr: ModbusAddr { addr: "16404", encoding: "f4" }
       bacnetAddr: BacnetAddr { addr: "AI11" }
     }
-    l3CurrentSensor: ElecAcLineCurrentSensor {
+    ElecAcLineCurrentSensor {
       lineCurrent: "L3"
       modbusAddr: ModbusAddr { addr: "16406", encoding: "f4" }
       bacnetAddr: BacnetAddr { addr: "AI12" }
     }
-    lineAvgCurrentSensor: ElecAcLineAvgCurrentSensor {
+    ElecAcLineAvgCurrentSensor {
       modbusAddr: ModbusAddr { addr: "16408", encoding: "f4" }
       bacnetAddr: BacnetAddr { addr: "AI13" }
     }
-    neutralCurrentSensor: ElecAcNeutralCurrentSensor {
+    ElecAcNeutralCurrentSensor {
       modbusAddr: ModbusAddr { addr: "16410", encoding: "f4" }
       bacnetAddr: BacnetAddr { addr: "AI14" }
     }
-    l1NetActivePowerSensor: ElecAcPhaseNetActivePowerSensor {
+    ElecAcPhaseNetActivePowerSensor {
       phasePower: "L1"
       modbusAddr: ModbusAddr { addr: "16412", encoding: "f4", scale: "0.001" }
       bacnetAddr: BacnetAddr { addr: "AI15" }
     }
-    l2NetActivePowerSensor: ElecAcPhaseNetActivePowerSensor {
+    ElecAcPhaseNetActivePowerSensor {
       phasePower: "L2"
       modbusAddr: ModbusAddr { addr: "16414", encoding: "f4", scale: "0.001" }
       bacnetAddr: BacnetAddr { addr: "AI16" }
     }
-    l3NetActivePowerSensor: ElecAcPhaseNetActivePowerSensor {
+    ElecAcPhaseNetActivePowerSensor {
       phasePower: "L3"
       modbusAddr: ModbusAddr { addr: "16416", encoding: "f4", scale: "0.001" }
       bacnetAddr: BacnetAddr { addr: "AI17" }
     }
-    totalNetActivePowerSensor: ElecAcTotalNetActivePowerSensor {
+    ElecAcTotalNetActivePowerSensor {
       modbusAddr: ModbusAddr { addr: "16418", encoding: "f4", scale: "0.001" }
       bacnetAddr: BacnetAddr { addr: "AI18" }
     }
-    l1NetReactivePowerSensor: ElecAcPhaseNetReactivePowerSensor {
+    ElecAcPhaseNetReactivePowerSensor {
       phasePower: "L1"
       modbusAddr: ModbusAddr { addr: "16420", encoding: "f4", scale: "0.001" }
       bacnetAddr: BacnetAddr { addr: "AI19" }
     }
-    l2NetReactivePowerSensor: ElecAcPhaseNetReactivePowerSensor {
+    ElecAcPhaseNetReactivePowerSensor {
       phasePower: "L2"
       modbusAddr: ModbusAddr { addr: "16422", encoding: "f4", scale: "0.001" }
       bacnetAddr: BacnetAddr { addr: "AI20" }
     }
-    l3NetReactivePowerSensor: ElecAcPhaseNetReactivePowerSensor {
+    ElecAcPhaseNetReactivePowerSensor {
       phasePower: "L3"
       modbusAddr: ModbusAddr { addr: "16424", encoding: "f4", scale: "0.001" }
       bacnetAddr: BacnetAddr { addr: "AI21" }
     }
-    totalNetReactivePowerSensor: ElecAcTotalNetReactivePowerSensor {
+    ElecAcTotalNetReactivePowerSensor {
       modbusAddr: ModbusAddr { addr: "16426", encoding: "f4", scale: "0.001" }
       bacnetAddr: BacnetAddr { addr: "AI22" }
     }
-    l1NetApparentPowerSensor: ElecAcPhaseNetApparentPowerSensor {
+    ElecAcPhaseNetApparentPowerSensor {
       phasePower: "L1"
       modbusAddr: ModbusAddr { addr: "16428", encoding: "f4", scale: "0.001" }
       bacnetAddr: BacnetAddr { addr: "AI23" }
     }
-    l2NetApparentPowerSensor: ElecAcPhaseNetApparentPowerSensor {
+    ElecAcPhaseNetApparentPowerSensor {
       phasePower: "L2"
       modbusAddr: ModbusAddr { addr: "16430", encoding: "f4", scale: "0.001" }
       bacnetAddr: BacnetAddr { addr: "AI24" }
     }
-    l3NetApparentPowerSensor: ElecAcPhaseNetApparentPowerSensor {
+    ElecAcPhaseNetApparentPowerSensor {
       phasePower: "L3"
       modbusAddr: ModbusAddr { addr: "16432", encoding: "f4", scale: "0.001" }
       bacnetAddr: BacnetAddr { addr: "AI25" }
     }
-    totalNetApparentPowerSensor: ElecAcTotalNetApparentPowerSensor {
+    ElecAcTotalNetApparentPowerSensor {
       modbusAddr: ModbusAddr { addr: "16434", encoding: "f4", scale: "0.001" }
       bacnetAddr: BacnetAddr { addr: "AI26" }
     }
-    l1PfSensor: ElecAcPhasePfSensor {
+    ElecAcPhasePfSensor {
       pfTrue
       pfIec
       phasePf: "L1"
       modbusAddr: ModbusAddr { addr: "16436", encoding: "f4" }
       bacnetAddr: BacnetAddr { addr: "AI27" }
     }
-    l2PfSensor: ElecAcPhasePfSensor {
+    ElecAcPhasePfSensor {
       pfTrue
       pfIec
       phasePf: "L2"
       modbusAddr: ModbusAddr { addr: "16438", encoding: "f4" }
       bacnetAddr: BacnetAddr { addr: "AI28" }
     }
-    l3PfSensor: ElecAcPhasePfSensor {
+    ElecAcPhasePfSensor {
       pfTrue
       pfIec
       phasePf: "L3"
       modbusAddr: ModbusAddr { addr: "16440", encoding: "f4" }
       bacnetAddr: BacnetAddr { addr: "AI29" }
     }
-    totalPfSensor: ElecAcTotalPfSensor {
+    ElecAcTotalPfSensor {
       pfTrue
       pfIec
       modbusAddr: ModbusAddr { addr: "16442", encoding: "f4" }
       bacnetAddr: BacnetAddr { addr: "AI30" }
     }
-    lineAvgImbalanceVoltSensor: ElecAcLineAvgStatVoltSensor {
+    ElecAcLineAvgStatVoltSensor {
       imbalance
       modbusAddr: ModbusAddr { addr: "16444", encoding: "f4", scale: "100" }
       bacnetAddr: BacnetAddr { addr: "AI31" }
     }
-    lineAvgImbalanceCurrentSensor: ElecAcLineAvgStatCurrentSensor {
+    ElecAcLineAvgStatCurrentSensor {
       imbalance
       modbusAddr: ModbusAddr { addr: "16446", encoding: "f4", scale: "100" }
       bacnetAddr: BacnetAddr { addr: "AI32" }
     }
-    totalNetActiveDemandSensor: ElecAcTotalNetActiveDemandSensor {
+    ElecAcTotalNetActiveDemandSensor {
       modbusAddr: ModbusAddr { addr: "16450", encoding: "f4", scale: "0.001" }
       bacnetAddr: BacnetAddr { addr: "AI34" }
     }
-    totalNetReactiveDemandSensor: ElecAcTotalNetReactiveDemandSensor {
+    ElecAcTotalNetReactiveDemandSensor {
       modbusAddr: ModbusAddr { addr: "16452", encoding: "f4", scale: "0.001" }
       bacnetAddr: BacnetAddr { addr: "AI35" }
     }
-    totalNetApparentDemandSensor: ElecAcTotalNetApparentDemandSensor {
+    ElecAcTotalNetApparentDemandSensor {
       modbusAddr: ModbusAddr { addr: "16454", encoding: "f4", scale: "0.001" }
       bacnetAddr: BacnetAddr { addr: "AI36" }
     }
-    totalImportActiveEnergySensor: ElecAcTotalImportActiveEnergySensor {
+    ElecAcTotalImportActiveEnergySensor {
       modbusAddr: ModbusAddr { addr: "16456", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI40" }
     }
-    totalExportActiveEnergySensor: ElecAcTotalExportActiveEnergySensor {
+    ElecAcTotalExportActiveEnergySensor {
       modbusAddr: ModbusAddr { addr: "16458", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI41" }
     }
-    totalImportReactiveEnergySensor: ElecAcTotalImportReactiveEnergySensor {
+    ElecAcTotalImportReactiveEnergySensor {
       modbusAddr: ModbusAddr { addr: "16460", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI42" }
     }
-    totalExportReactiveEnergySensor: ElecAcTotalExportReactiveEnergySensor {
+    ElecAcTotalExportReactiveEnergySensor {
       modbusAddr: ModbusAddr { addr: "16462", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI43" }
     }
-    totalNetActiveEnergySensor: ElecAcTotalNetActiveEnergySensor {
+    ElecAcTotalNetActiveEnergySensor {
       modbusAddr: ModbusAddr { addr: "16466", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI45" }
     }
-    totalNetReactiveEnergySensor: ElecAcTotalNetReactiveEnergySensor {
+    ElecAcTotalNetReactiveEnergySensor {
       modbusAddr: ModbusAddr { addr: "16470", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI47" }
     }
-    totalNetApparentEnergySensor: ElecAcTotalNetApparentEnergySensor {
+    ElecAcTotalNetApparentEnergySensor {
       modbusAddr: ModbusAddr { addr: "16472", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI48" }
     }
-    l1ImportActiveEnergySensor: ElecAcPhaseImportActiveEnergySensor {
+    ElecAcPhaseImportActiveEnergySensor {
       phaseEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "17952", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI49" }
     }
-    l1ExportActiveEnergySensor: ElecAcPhaseExportActiveEnergySensor {
+    ElecAcPhaseExportActiveEnergySensor {
       phaseEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "17954", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI50" }
     }
-    l2ImportActiveEnergySensor: ElecAcPhaseImportActiveEnergySensor {
+    ElecAcPhaseImportActiveEnergySensor {
       phaseEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "17956", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI51" }
     }
-    l2ExportActiveEnergySensor: ElecAcPhaseExportActiveEnergySensor {
+    ElecAcPhaseExportActiveEnergySensor {
       phaseEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "17958", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI52" }
     }
-    l3ImportActiveEnergySensor: ElecAcPhaseImportActiveEnergySensor {
+    ElecAcPhaseImportActiveEnergySensor {
       phaseEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "17960", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI53" }
     }
-    l3ExportActiveEnergySensor: ElecAcPhaseExportActiveEnergySensor {
+    ElecAcPhaseExportActiveEnergySensor {
       phaseEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "17962", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI54" }
     }
-    l1ImportReactiveEnergySensor: ElecAcPhaseImportReactiveEnergySensor {
+    ElecAcPhaseImportReactiveEnergySensor {
       phaseEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "17964", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI55" }
     }
-    l1ExportReactiveEnergySensor: ElecAcPhaseExportReactiveEnergySensor {
+    ElecAcPhaseExportReactiveEnergySensor {
       phaseEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "17966", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI56" }
     }
-    l2ImportReactiveEnergySensor: ElecAcPhaseImportReactiveEnergySensor {
+    ElecAcPhaseImportReactiveEnergySensor {
       phaseEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "17968", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI57" }
     }
-    l2ExportReactiveEnergySensor: ElecAcPhaseExportReactiveEnergySensor {
+    ElecAcPhaseExportReactiveEnergySensor {
       phaseEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "17970", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI58" }
     }
-    l3ImportReactiveEnergySensor: ElecAcPhaseImportReactiveEnergySensor {
+    ElecAcPhaseImportReactiveEnergySensor {
       phaseEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "17972", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI59" }
     }
-    l3ExportReactiveEnergySensor: ElecAcPhaseExportReactiveEnergySensor {
+    ElecAcPhaseExportReactiveEnergySensor {
       phaseEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "17974", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI60" }
     }
-    l1NetApparentEnergySensor: ElecAcLineNetApparentEnergySensor {
+    ElecAcLineNetApparentEnergySensor {
       phaseEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "17976", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI61" }
     }
-    l2NetApparentEnergySensor: ElecAcLineNetApparentEnergySensor {
+    ElecAcLineNetApparentEnergySensor {
       phaseEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "17978", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI62" }
     }
-    l3NetApparentEnergySensor: ElecAcLineNetApparentEnergySensor {
+    ElecAcLineNetApparentEnergySensor {
       phaseEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "17980", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI63" }
     }
-    l1ThdCurrentSensor: ElecAcLineStatCurrentSensor {
+    ElecAcLineStatCurrentSensor {
       totalHarmonicDistortion
       lineCurrent: "L1"
       modbusAddr: ModbusAddr { addr: "16478", encoding: "s2", scale: "0.01" }
       bacnetAddr: BacnetAddr { addr: "AI68" }
     }
-    l2ThdCurrentSensor: ElecAcLineStatCurrentSensor {
+    ElecAcLineStatCurrentSensor {
       totalHarmonicDistortion
       lineCurrent: "L2"
       modbusAddr: ModbusAddr { addr: "16479", encoding: "s2", scale: "0.01" }
       bacnetAddr: BacnetAddr { addr: "AI69" }
     }
-    l3ThdCurrentSensor: ElecAcLineStatCurrentSensor {
+    ElecAcLineStatCurrentSensor {
       totalHarmonicDistortion
       lineCurrent: "L3"
       modbusAddr: ModbusAddr { addr: "16480", encoding: "s2", scale: "0.01" }
       bacnetAddr: BacnetAddr { addr: "AI70" }
     }
-    lineAvgThdCurrentSensor: ElecAcLineAvgStatCurrentSensor {
+    ElecAcLineAvgStatCurrentSensor {
       totalHarmonicDistortion
       modbusAddr: ModbusAddr { addr: "16481", encoding: "s2", scale: "0.01" }
       bacnetAddr: BacnetAddr { addr: "AI71" }
     }
-    freqSensor100ms: ElecAcFreqSensor {
+
+
+
+    /*
+    // Section 6.3.6 100ms metering parameters
+    // TODO: select these instead of the real-time meter parameters?
+    ElecAcFreqSensor {
       modbusAddr: ModbusAddr { addr: "12288", encoding: "f4" }
     }
-    l1NVoltSensor100ms: ElecAcPhaseVoltSensor {
+    ElecAcPhaseVoltSensor {
       phaseVolt: "L1-N"
       modbusAddr: ModbusAddr { addr: "12290", encoding: "f4" }
     }
-    l2NVoltSensor100ms: ElecAcPhaseVoltSensor {
+    ElecAcPhaseVoltSensor {
       phaseVolt: "L2-N"
       modbusAddr: ModbusAddr { addr: "12292", encoding: "f4" }
     }
-    l3NVoltSensor100ms: ElecAcPhaseVoltSensor {
+    ElecAcPhaseVoltSensor {
       phaseVolt: "L3-N"
       modbusAddr: ModbusAddr { addr: "12294", encoding: "f4" }
     }
-    phaseAvgVoltSensor100ms: ElecAcPhaseAvgVoltSensor {
+    ElecAcPhaseAvgVoltSensor {
       modbusAddr: ModbusAddr { addr: "12296", encoding: "f4" }
     }
-    l1L2VoltSensor100ms: ElecAcLineVoltSensor {
+    ElecAcLineVoltSensor {
       lineVolt: "L1-L2"
       modbusAddr: ModbusAddr { addr: "12298", encoding: "f4" }
     }
-    l2L3VoltSensor100ms: ElecAcLineVoltSensor {
+    ElecAcLineVoltSensor {
       lineVolt: "L2-L3"
       modbusAddr: ModbusAddr { addr: "12300", encoding: "f4" }
     }
-    l3L1VoltSensor100ms: ElecAcLineVoltSensor {
+    ElecAcLineVoltSensor {
       lineVolt: "L3-L1"
       modbusAddr: ModbusAddr { addr: "12302", encoding: "f4" }
     }
-    lineAvgVoltSensor100ms: ElecAcLineAvgVoltSensor {
+    ElecAcLineAvgVoltSensor {
       modbusAddr: ModbusAddr { addr: "12304", encoding: "f4" }
     }
-    l1CurrentSensor100ms: ElecAcLineCurrentSensor {
+    ElecAcLineCurrentSensor {
       lineCurrent: "L1"
       modbusAddr: ModbusAddr { addr: "12306", encoding: "f4" }
     }
-    l2CurrentSensor100ms: ElecAcLineCurrentSensor {
+    ElecAcLineCurrentSensor {
       lineCurrent: "L2"
       modbusAddr: ModbusAddr { addr: "12308", encoding: "f4" }
     }
-    l3CurrentSensor100ms: ElecAcLineCurrentSensor {
+    ElecAcLineCurrentSensor {
       lineCurrent: "L3"
       modbusAddr: ModbusAddr { addr: "12310", encoding: "f4" }
     }
-    lineAvgCurrentSensor100ms: ElecAcLineAvgCurrentSensor {
+    ElecAcLineAvgCurrentSensor {
       modbusAddr: ModbusAddr { addr: "12312", encoding: "f4" }
     }
-    neutralCurrentSensor100ms: ElecAcNeutralCurrentSensor {
+    ElecAcNeutralCurrentSensor {
       modbusAddr: ModbusAddr { addr: "12314", encoding: "f4" }
     }
-    l1NetActivePowerSensor100ms: ElecAcPhaseNetActivePowerSensor {
+    ElecAcPhaseNetActivePowerSensor {
       phasePower: "L1"
       modbusAddr: ModbusAddr { addr: "12316", encoding: "f4", scale: "0.001" }
     }
-    l2NetActivePowerSensor100ms: ElecAcPhaseNetActivePowerSensor {
+    ElecAcPhaseNetActivePowerSensor {
       phasePower: "L2"
       modbusAddr: ModbusAddr { addr: "12318", encoding: "f4", scale: "0.001" }
     }
-    l3NetActivePowerSensor100ms: ElecAcPhaseNetActivePowerSensor {
+    ElecAcPhaseNetActivePowerSensor {
       phasePower: "L3"
       modbusAddr: ModbusAddr { addr: "12320", encoding: "f4", scale: "0.001" }
     }
-    totalNetActivePowerSensor100ms: ElecAcTotalNetActivePowerSensor {
+    ElecAcTotalNetActivePowerSensor {
       modbusAddr: ModbusAddr { addr: "12322", encoding: "f4", scale: "0.001" }
     }
-    l1NetReactivePowerSensor100ms: ElecAcPhaseNetReactivePowerSensor {
+    ElecAcPhaseNetReactivePowerSensor {
       phasePower: "L1"
       modbusAddr: ModbusAddr { addr: "12324", encoding: "f4", scale: "0.001" }
     }
-    l2NetReactivePowerSensor100ms: ElecAcPhaseNetReactivePowerSensor {
+    ElecAcPhaseNetReactivePowerSensor {
       phasePower: "L2"
       modbusAddr: ModbusAddr { addr: "12326", encoding: "f4", scale: "0.001" }
     }
-    l3NetReactivePowerSensor100ms: ElecAcPhaseNetReactivePowerSensor {
+    ElecAcPhaseNetReactivePowerSensor {
       phasePower: "L3"
       modbusAddr: ModbusAddr { addr: "12328", encoding: "f4", scale: "0.001" }
     }
-    totalNetReactivePowerSensor100ms: ElecAcTotalNetReactivePowerSensor {
+    ElecAcTotalNetReactivePowerSensor {
       modbusAddr: ModbusAddr { addr: "12330", encoding: "f4", scale: "0.001" }
     }
-    l1NetApparentPowerSensor100ms: ElecAcPhaseNetApparentPowerSensor {
+    ElecAcPhaseNetApparentPowerSensor {
       phasePower: "L1"
       modbusAddr: ModbusAddr { addr: "12332", encoding: "f4", scale: "0.001" }
     }
-    l2NetApparentPowerSensor100ms: ElecAcPhaseNetApparentPowerSensor {
+    ElecAcPhaseNetApparentPowerSensor {
       phasePower: "L2"
       modbusAddr: ModbusAddr { addr: "12334", encoding: "f4", scale: "0.001" }
     }
-    l3NetApparentPowerSensor100ms: ElecAcPhaseNetApparentPowerSensor {
+    ElecAcPhaseNetApparentPowerSensor {
       phasePower: "L3"
       modbusAddr: ModbusAddr { addr: "12336", encoding: "f4", scale: "0.001" }
     }
-    totalNetApparentPowerSensor100ms: ElecAcTotalNetApparentPowerSensor {
+    ElecAcTotalNetApparentPowerSensor {
       modbusAddr: ModbusAddr { addr: "12338", encoding: "f4", scale: "0.001" }
     }
-    l1PfSensor100ms: ElecAcPhasePfSensor {
+    ElecAcPhasePfSensor {
       pfTrue
       pfIec
       phasePf: "L1"
       modbusAddr: ModbusAddr { addr: "12340", encoding: "f4" }
     }
-    l2PfSensor100ms: ElecAcPhasePfSensor {
+    ElecAcPhasePfSensor {
       pfTrue
       pfIec
       phasePf: "L2"
       modbusAddr: ModbusAddr { addr: "12342", encoding: "f4" }
     }
-    l3PfSensor100ms: ElecAcPhasePfSensor {
+    ElecAcPhasePfSensor {
       pfTrue
       pfIec
       phasePf: "L3"
       modbusAddr: ModbusAddr { addr: "12344", encoding: "f4" }
     }
-    totalPfSensor100ms: ElecAcTotalPfSensor {
+    ElecAcTotalPfSensor {
       pfTrue
       pfIec
       modbusAddr: ModbusAddr { addr: "12346", encoding: "f4" }
     }
-    l1Ihd2ndCurrentSensor: ElecAcLineStatCurrentSensor {
+    */
+
+
+
+
+    ElecAcLineStatCurrentSensor {
       elecAcHarmonicOrder: 2
       individualHarmonicDistortion
       lineCurrent: "L1"
       modbusAddr: ModbusAddr { addr: "16584", encoding: "s2", scale: "0.01" }
     }
-    l1Ihd3rdCurrentSensor: ElecAcLineStatCurrentSensor {
+    ElecAcLineStatCurrentSensor {
       elecAcHarmonicOrder: 3
       individualHarmonicDistortion
       lineCurrent: "L1"
       modbusAddr: ModbusAddr { addr: "16585", encoding: "s2", scale: "0.01" }
     }
-    l1Ihd4thCurrentSensor: ElecAcLineStatCurrentSensor {
+    ElecAcLineStatCurrentSensor {
       elecAcHarmonicOrder: 4
       individualHarmonicDistortion
       lineCurrent: "L1"
       modbusAddr: ModbusAddr { addr: "16586", encoding: "s2", scale: "0.01" }
     }
-    l1OddThdCurrentSensor: ElecAcLineStatCurrentSensor {
+    ElecAcLineStatCurrentSensor {
       oddTotalHarmonicDistortion
       lineCurrent: "L1"
       modbusAddr: ModbusAddr { addr: "16614", encoding: "s2", scale: "0.01" }
     }
-    l1EvenThdCurrentSensor: ElecAcLineStatCurrentSensor {
+    ElecAcLineStatCurrentSensor {
       evenTotalHarmonicDistortion
       lineCurrent: "L1"
       modbusAddr: ModbusAddr { addr: "16615", encoding: "s2", scale: "0.01" }
     }
-    l1KFactorCurrentSensor: ElecAcLineStatCurrentSensor {
+    ElecAcLineStatCurrentSensor {
       kFactor
       lineCurrent: "L1"
       modbusAddr: ModbusAddr { addr: "16616", encoding: "s2", scale: "0.01" }
     }
-    sunspecLineAvgCurrentSensor: ElecAcLineAvgCurrentSensor {
+
+
+
+
+
+
+
+    /*
+    // Section 6.3.16 SunSpec registers
+    // TODO: select these instead of the real-time meter parameters?
+    ElecAcLineAvgCurrentSensor {
       modbusAddr: ModbusAddr { addr: "50071", encoding: "s2" }
     }
-    sunspecL1CurrentSensor: ElecAcLineCurrentSensor {
+    ElecAcLineCurrentSensor {
       lineCurrent: "L1"
       modbusAddr: ModbusAddr { addr: "50072", encoding: "s2" }
     }
-    sunspecL2CurrentSensor: ElecAcLineCurrentSensor {
+    ElecAcLineCurrentSensor {
       lineCurrent: "L2"
       modbusAddr: ModbusAddr { addr: "50073", encoding: "s2" }
     }
-    sunspecL3CurrentSensor: ElecAcLineCurrentSensor {
+    ElecAcLineCurrentSensor {
       lineCurrent: "L3"
       modbusAddr: ModbusAddr { addr: "50074", encoding: "s2" }
     }
-    sunspecPhaseAvgVoltSensor: ElecAcPhaseAvgVoltSensor {
+    ElecAcPhaseAvgVoltSensor {
       modbusAddr: ModbusAddr { addr: "50076", encoding: "s2" }
     }
-    sunspecL1NVoltSensor: ElecAcPhaseVoltSensor {
+    ElecAcPhaseVoltSensor {
       phaseVolt: "L1-N"
       modbusAddr: ModbusAddr { addr: "50077", encoding: "s2" }
     }
-    sunspecL2NVoltSensor: ElecAcPhaseVoltSensor {
+    ElecAcPhaseVoltSensor {
       phaseVolt: "L2-N"
       modbusAddr: ModbusAddr { addr: "50078", encoding: "s2" }
     }
-    sunspecL3NVoltSensor: ElecAcPhaseVoltSensor {
+    ElecAcPhaseVoltSensor {
       phaseVolt: "L3-N"
       modbusAddr: ModbusAddr { addr: "50079", encoding: "s2" }
     }
-    sunspecLineAvgVoltSensor: ElecAcLineAvgVoltSensor {
+    ElecAcLineAvgVoltSensor {
       modbusAddr: ModbusAddr { addr: "50080", encoding: "s2" }
     }
-    sunspecL1L2VoltSensor: ElecAcLineVoltSensor {
+    ElecAcLineVoltSensor {
       phaseVolt: "L1-L2"
       modbusAddr: ModbusAddr { addr: "50081", encoding: "s2" }
     }
-    sunspecL2L3VoltSensor: ElecAcLineVoltSensor {
+    ElecAcLineVoltSensor {
       phaseVolt: "L2-L3"
       modbusAddr: ModbusAddr { addr: "50082", encoding: "s2" }
     }
-    sunspecL3L1VoltSensor: ElecAcLineVoltSensor {
+    ElecAcLineVoltSensor {
       phaseVolt: "L3-L1"
       modbusAddr: ModbusAddr { addr: "50083", encoding: "s2" }
     }
-    sunspecFreqSensor: ElecAcFreqSensor {
+    ElecAcFreqSensor {
       modbusAddr: ModbusAddr { addr: "50085", encoding: "s2" }
     }
-    sunspecTotalNetActivePowerSensor: ElecAcTotalNetActivePowerSensor {
+    ElecAcTotalNetActivePowerSensor {
       modbusAddr: ModbusAddr { addr: "50087", encoding: "s2", scale: "0.001" }
     }
-    sunspecL1NetActivePowerSensor: ElecAcPhaseNetActivePowerSensor {
+    ElecAcPhaseNetActivePowerSensor {
       phasePower: "L1"
       modbusAddr: ModbusAddr { addr: "50088", encoding: "s2", scale: "0.001" }
     }
-    sunspecL2NetActivePowerSensor: ElecAcPhaseNetActivePowerSensor {
+    ElecAcPhaseNetActivePowerSensor {
       phasePower: "L2"
       modbusAddr: ModbusAddr { addr: "50089", encoding: "s2", scale: "0.001" }
     }
-    sunspecL3NetActivePowerSensor: ElecAcPhaseNetActivePowerSensor {
+    ElecAcPhaseNetActivePowerSensor {
       phasePower: "L3"
       modbusAddr: ModbusAddr { addr: "50090", encoding: "s2", scale: "0.001" }
     }
-    sunspecTotalNetApparentPowerSensor: ElecAcTotalNetApparentPowerSensor {
+    ElecAcTotalNetApparentPowerSensor {
       modbusAddr: ModbusAddr { addr: "50092", encoding: "s2", scale: "0.001" }
     }
-    sunspecL1NetApparentPowerSensor: ElecAcPhaseNetApparentPowerSensor {
+    ElecAcPhaseNetApparentPowerSensor {
       phasePower: "L1"
       modbusAddr: ModbusAddr { addr: "50093", encoding: "s2", scale: "0.001" }
     }
-    sunspecL2NetApparentPowerSensor: ElecAcPhaseNetApparentPowerSensor {
+    ElecAcPhaseNetApparentPowerSensor {
       phasePower: "L2"
       modbusAddr: ModbusAddr { addr: "50094", encoding: "s2", scale: "0.001" }
     }
-    sunspecL3NetApparentPowerSensor: ElecAcPhaseNetApparentPowerSensor {
+    ElecAcPhaseNetApparentPowerSensor {
       phasePower: "L3"
       modbusAddr: ModbusAddr { addr: "50095", encoding: "s2", scale: "0.001" }
     }
-    sunspecTotalNetReactivePowerSensor: ElecAcTotalNetReactivePowerSensor {
+    ElecAcTotalNetReactivePowerSensor {
       modbusAddr: ModbusAddr { addr: "50097", encoding: "s2", scale: "0.001" }
     }
-    sunspecL1NetReactivePowerSensor: ElecAcPhaseNetReactivePowerSensor {
+    ElecAcPhaseNetReactivePowerSensor {
       phasePower: "L1"
       modbusAddr: ModbusAddr { addr: "50098", encoding: "s2", scale: "0.001" }
     }
-    sunspecL2NetReactivePowerSensor: ElecAcPhaseNetReactivePowerSensor {
+    ElecAcPhaseNetReactivePowerSensor {
       phasePower: "L2"
       modbusAddr: ModbusAddr { addr: "50099", encoding: "s2", scale: "0.001" }
     }
-    sunspecL3NetReactivePowerSensor: ElecAcPhaseNetReactivePowerSensor {
+    ElecAcPhaseNetReactivePowerSensor {
       phasePower: "L3"
       modbusAddr: ModbusAddr { addr: "50100", encoding: "s2", scale: "0.001" }
     }
-    sunspecTotalPfSensor: ElecAcTotalPfSensor {
+    ElecAcTotalPfSensor {
       modbusAddr: ModbusAddr { addr: "50102", encoding: "s2" }
     }
-    sunspecL1PfSensor: ElecAcLinePfSensor {
+    ElecAcLinePfSensor {
       linePf: "L1"
       modbusAddr: ModbusAddr { addr: "50103", encoding: "s2" }
     }
-    sunspecL2PfSensor: ElecAcLinePfSensor {
+    ElecAcLinePfSensor {
       linePf: "L2"
       modbusAddr: ModbusAddr { addr: "50104", encoding: "s2" }
     }
-    sunspecL3PfSensor: ElecAcLinePfSensor {
+    ElecAcLinePfSensor {
       linePf: "L3"
       modbusAddr: ModbusAddr { addr: "50105", encoding: "s2" }
     }
-    sunspecTotalExportActiveEnergySensor: ElecAcTotalExportActiveEnergySensor {
+    ElecAcTotalExportActiveEnergySensor {
       modbusAddr: ModbusAddr { addr: "50107", encoding: "u4" }
     }
-    sunspecL1ExportActiveEnergySensor: ElecAcLineExportActiveEnergySensor {
+    ElecAcLineExportActiveEnergySensor {
       lineEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "50109", encoding: "u4" }
     }
-    sunspecL2ExportActiveEnergySensor: ElecAcLineExportActiveEnergySensor {
+    ElecAcLineExportActiveEnergySensor {
       lineEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "50111", encoding: "u4" }
     }
-    sunspecL3ExportActiveEnergySensor: ElecAcLineExportActiveEnergySensor {
+    ElecAcLineExportActiveEnergySensor {
       lineEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "50113", encoding: "u4" }
     }
-    sunspecTotalImportActiveEnergySensor: ElecAcTotalImportActiveEnergySensor {
+    ElecAcTotalImportActiveEnergySensor {
       modbusAddr: ModbusAddr { addr: "50115", encoding: "u4" }
     }
-    sunspecL1ImportActiveEnergySensor: ElecAcLineImportActiveEnergySensor {
+    ElecAcLineImportActiveEnergySensor {
       lineEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "50117", encoding: "u4" }
     }
-    sunspecL2ImportActiveEnergySensor: ElecAcLineImportActiveEnergySensor {
+    ElecAcLineImportActiveEnergySensor {
       lineEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "50119", encoding: "u4" }
     }
-    sunspecL3ImportActiveEnergySensor: ElecAcLineImportActiveEnergySensor {
+    ElecAcLineImportActiveEnergySensor {
       lineEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "50121", encoding: "u4" }
     }
-    sunspecTotalExportApparentEnergySensor: ElecAcTotalExportApparentEnergySensor {
+    ElecAcTotalExportApparentEnergySensor {
       modbusAddr: ModbusAddr { addr: "50124", encoding: "u4" }
     }
-    sunspecL1ExportApparentEnergySensor: ElecAcLineExportApparentEnergySensor {
+    ElecAcLineExportApparentEnergySensor {
       lineEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "50126", encoding: "u4" }
     }
-    sunspecL2ExportApparentEnergySensor: ElecAcLineExportApparentEnergySensor {
+    ElecAcLineExportApparentEnergySensor {
       lineEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "50128", encoding: "u4" }
     }
-    sunspecL3ExportApparentEnergySensor: ElecAcLineExportApparentEnergySensor {
+    ElecAcLineExportApparentEnergySensor {
       lineEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "50130", encoding: "u4" }
     }
-    sunspecTotalImportApparentEnergySensor: ElecAcTotalImportApparentEnergySensor {
+    ElecAcTotalImportApparentEnergySensor {
       modbusAddr: ModbusAddr { addr: "50132", encoding: "u4" }
     }
-    sunspecL1ImportApparentEnergySensor: ElecAcLineImportApparentEnergySensor {
+    ElecAcLineImportApparentEnergySensor {
       lineEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "50134", encoding: "u4" }
     }
-    sunspecL2ImportApparentEnergySensor: ElecAcLineImportApparentEnergySensor {
+    ElecAcLineImportApparentEnergySensor {
       lineEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "50136", encoding: "u4" }
     }
-    sunspecL3ImportApparentEnergySensor: ElecAcLineImportApparentEnergySensor {
+    ElecAcLineImportApparentEnergySensor {
       lineEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "50138", encoding: "u4" }
     }
-    sunspecQ1TotalImportReactiveEnergySensor: ElecAcTotalImportReactiveEnergySensor {
+    ElecAcTotalImportReactiveEnergySensor {
       elecQuadrant: "1"
       modbusAddr: ModbusAddr { addr: "50141", encoding: "u4" }
     }
-    sunspecQ1L1ImportReactiveEnergySensor: ElecAcLineImportReactiveEnergySensor {
+    ElecAcLineImportReactiveEnergySensor {
       elecQuadrant: "1"
       lineEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "50143", encoding: "u4" }
     }
-    sunspecQ1L2ImportReactiveEnergySensor: ElecAcLineImportReactiveEnergySensor {
+    ElecAcLineImportReactiveEnergySensor {
       elecQuadrant: "1"
       lineEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "50145", encoding: "u4" }
     }
-    sunspecQ1L3ImportReactiveEnergySensor: ElecAcLineImportReactiveEnergySensor {
+    ElecAcLineImportReactiveEnergySensor {
       elecQuadrant: "1"
       lineEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "50174", encoding: "u4" }
     }
-    sunspecQ2TotalImportReactiveEnergySensor: ElecAcTotalImportReactiveEnergySensor {
+    ElecAcTotalImportReactiveEnergySensor {
       elecQuadrant: "2"
       modbusAddr: ModbusAddr { addr: "50149", encoding: "u4" }
     }
-    sunspecQ2L1ImportReactiveEnergySensor: ElecAcLineImportReactiveEnergySensor {
+    ElecAcLineImportReactiveEnergySensor {
       elecQuadrant: "2"
       lineEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "50151", encoding: "u4" }
     }
-    sunspecQ2L2ImportReactiveEnergySensor: ElecAcLineImportReactiveEnergySensor {
+    ElecAcLineImportReactiveEnergySensor {
       elecQuadrant: "2"
       lineEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "50153", encoding: "u4" }
     }
-    sunspecQ2L3ImportReactiveEnergySensor: ElecAcLineImportReactiveEnergySensor {
+    ElecAcLineImportReactiveEnergySensor {
       elecQuadrant: "2"
       lineEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "50155", encoding: "u4" }
     }
-    sunspecQ3TotalExportReactiveEnergySensor: ElecAcTotalExportReactiveEnergySensor {
+    ElecAcTotalExportReactiveEnergySensor {
       elecQuadrant: "3"
       modbusAddr: ModbusAddr { addr: "50157", encoding: "u4" }
     }
-    sunspecQ3L1ExportReactiveEnergySensor: ElecAcLineExportReactiveEnergySensor {
+    ElecAcLineExportReactiveEnergySensor {
       elecQuadrant: "3"
       lineEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "50159", encoding: "u4" }
     }
-    sunspecQ3L2ExportReactiveEnergySensor: ElecAcLineExportReactiveEnergySensor {
+    ElecAcLineExportReactiveEnergySensor {
       elecQuadrant: "3"
       lineEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "50161", encoding: "u4" }
     }
-    sunspecQ3L3ExportReactiveEnergySensor: ElecAcLineExportReactiveEnergySensor {
+    ElecAcLineExportReactiveEnergySensor {
       elecQuadrant: "3"
       lineEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "50163", encoding: "u4" }
     }
-    sunspecQ4TotalExportReactiveEnergySensor: ElecAcTotalExportReactiveEnergySensor {
+    ElecAcTotalExportReactiveEnergySensor {
       elecQuadrant: "4"
       modbusAddr: ModbusAddr { addr: "50165", encoding: "u4" }
     }
-    sunspecQ4L1ExportReactiveEnergySensor: ElecAcLineExportReactiveEnergySensor {
+    ElecAcLineExportReactiveEnergySensor {
       elecQuadrant: "4"
       lineEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "50167", encoding: "u4" }
     }
-    sunspecQ4L2ExportReactiveEnergySensor: ElecAcLineExportReactiveEnergySensor {
+    ElecAcLineExportReactiveEnergySensor {
       elecQuadrant: "4"
       lineEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "50169", encoding: "u4" }
     }
-    sunspecQ4L3ExportReactiveEnergySensor: ElecAcLineExportReactiveEnergySensor {
+    ElecAcLineExportReactiveEnergySensor {
       elecQuadrant: "4"
       lineEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "50171", encoding: "u4" }
     }
+    */
+
+
+
   }
 }

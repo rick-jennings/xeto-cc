@@ -10,50 +10,57 @@
 ExampleElecAcPanel : ElecPanel {
   ac
   attrs: Query {
-    manufacturer: ManufacturerAttr { val: "Project Haystack" }
+    ManufacturerAttr { val: "Project Haystack" }
   }
   equips: {
-    mainCb: ElecAcCircuitBreaker3Phase480V {
+    ElecAcCircuitBreaker3Phase480V {
+      mainCb
       attrs: {
         ElecAcRatedInputMaxCurrentAttr { val: 2000A }
         ElecAcRatedMaxContinuousCurrentAttr { val: 1600A }
         // FUTURE => elecRef TBD
       }
     }
-    generatorCb: ElecAcCircuitBreaker3Phase480V {
+    ElecAcCircuitBreaker3Phase480V {
+      generatorCb
       attrs: {
         ElecAcRatedInputMaxCurrentAttr { val: 2000A }
         ElecAcRatedMaxContinuousCurrentAttr { val: 1600A }
         // FUTURE => elecRef TBD
       }
     }
-    mainBus: ElecAcBus3Phase480VWye {
+    ElecAcBus3Phase480VWye {
+      mainBus
       attrs: {
         ElecAcRatedInputMaxCurrentAttr { val: 2000A }
         // FUTURE => elecRef: [@mainCb, @busTieCb]
       }
     }
-    lowerBus: ElecAcBus3Phase480VWye {
+    ElecAcBus3Phase480VWye {
+      lowerBus
       attrs: {
         ElecAcRatedInputMaxCurrentAttr { val: 2000A }
         // FUTURE => elecRef: [@generatorCb, @busTieCb]
       }
     }
-    busTieCb: ElecAcCircuitBreaker3Phase480V {
+    ElecAcCircuitBreaker3Phase480V {
+      busTieCb
       attrs: {
         ElecAcRatedInputMaxCurrentAttr { val: 2000A }
         ElecAcRatedMaxContinuousCurrentAttr { val: 1600A }
         // FUTURE => elecRef: [@mainBus, @lowerBus]
       }
     }
-    branchCb1: ElecAcCircuitBreaker3Phase480V {
+    ElecAcCircuitBreaker3Phase480V {
+      branchCb1
       attrs: {
         ElecAcRatedInputMaxCurrentAttr { val: 300A }
         ElecAcRatedMaxContinuousCurrentAttr { val: 240A }
         // FUTURE => elecRef: @mainBus
       }
     }
-    feederCb1: ElecAcCircuitBreaker3Phase480V {
+    ElecAcCircuitBreaker3Phase480V {
+      feederCb1
       attrs: {
         ElecAcRatedInputMaxCurrentAttr { val: 600A }
         ElecAcRatedMaxContinuousCurrentAttr { val: 480A }

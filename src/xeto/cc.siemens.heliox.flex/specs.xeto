@@ -25,22 +25,22 @@ OcppDcEvsePort : EvsePort & DcElecMeter {
 // Device model for the Heliox Flex 180kW power cabinet
 HelioxFlex180kWPowerCabinet : EvsePowerConverter {
   attrs: Query {
-    manufacturer: ManufacturerAttr { val: "Heliox" }
-    modelSeries: ModelSeriesAttr { val: "Flex" }
-    modelNumber: ModelNumberAttr { val: "HE9821001-01-XXX" }
-    dimensionLength: DimensionLengthAttr { val: 32in }
-    dimensionWidth: DimensionWidthAttr { val: 32in }
-    dimensionHeight: DimensionHeightAttr { val: 90in }
-    weight: WeightAttr { val: 1323lb }
-    tempRatedMinOperating: TempRatedMinOperatingAttr { val: -13°F }
-    tempRatedMaxOperating: TempRatedMaxOperatingAttr { val: 113°F }
-    elecAcRatedInputLineToLineNominalVolt: ElecAcRatedInputLineToLineNominalVoltAttr { val: 480V }
-    elecAcRatedInputMaxCurrent: ElecAcRatedInputMaxCurrentAttr { val: 246A }
-    elecAcRatedInputFreq: ElecAcRatedInputFreqAttr { val: 60Hz }
-    elecDcRatedOutputMaxPower: ElecDcRatedOutputMaxPowerAttr { val: 150kW }
-    elecDcRatedOutputMaxCurrent: ElecDcRatedOutputMaxCurrentAttr { val: 250A }
-    elecDcRatedOutputMinVolt: ElecDcRatedOutputMinVoltAttr { val: 150V }
-    elecDcRatedOutputMaxVolt: ElecDcRatedOutputMaxVoltAttr { val: 1000V }
+    ManufacturerAttr { val: "Heliox" }
+    ModelSeriesAttr { val: "Flex" }
+    ModelNumberAttr { val: "HE9821001-01-XXX" }
+    DimensionLengthAttr { val: 32in }
+    DimensionWidthAttr { val: 32in }
+    DimensionHeightAttr { val: 90in }
+    WeightAttr { val: 1323lb }
+    TempRatedMinOperatingAttr { val: -13°F }
+    TempRatedMaxOperatingAttr { val: 113°F }
+    ElecAcRatedInputLineToLineNominalVoltAttr { val: 480V }
+    ElecAcRatedInputMaxCurrentAttr { val: 246A }
+    ElecAcRatedInputFreqAttr { val: 60Hz }
+    ElecDcRatedOutputMaxPowerAttr { val: 150kW }
+    ElecDcRatedOutputMaxCurrentAttr { val: 250A }
+    ElecDcRatedOutputMinVoltAttr { val: 150V }
+    ElecDcRatedOutputMaxVoltAttr { val: 1000V }
   }
 }
 
@@ -48,15 +48,15 @@ HelioxFlex180kWPowerCabinet : EvsePowerConverter {
 // Device model for the Heliox Flex 250A dispenser
 HelioxFlex250ADispenser : EvseDispenser {
   attrs: Query {
-    manufacturer: ManufacturerAttr { val: "Heliox" }
-    modelSeries: ModelSeriesAttr { val: "Flex" }
-    modelNumber: ModelNumberAttr { val: "HE9820006-01-XXX" }
-    dimensionLength: DimensionLengthAttr { val: 10in }
-    dimensionWidth: DimensionWidthAttr { val: 18in }
-    dimensionHeight: DimensionHeightAttr { val: 55in }
-    weight: WeightAttr { val: 220lb }
-    tempRatedMinOperating: TempRatedMinOperatingAttr { val: -13°F }
-    tempRatedMaxOperating: TempRatedMaxOperatingAttr { val: 113°F }
+    ManufacturerAttr { val: "Heliox" }
+    ModelSeriesAttr { val: "Flex" }
+    ModelNumberAttr { val: "HE9820006-01-XXX" }
+    DimensionLengthAttr { val: 10in }
+    DimensionWidthAttr { val: 18in }
+    DimensionHeightAttr { val: 55in }
+    WeightAttr { val: 220lb }
+    TempRatedMinOperatingAttr { val: -13°F }
+    TempRatedMaxOperatingAttr { val: 113°F }
   }
   points: {
     OcppChargePointStatusSensor
@@ -65,9 +65,9 @@ HelioxFlex250ADispenser : EvseDispenser {
   equips: {
     evsePort1: OcppDcEvsePort & EvseCable {
       attrs: Query {
-        elecDcRatedInputMaxCurrent: ElecDcRatedInputMaxCurrentAttr { val: 250A }
-        elecDcRatedInputMinVolt: ElecDcRatedInputMinVoltAttr { val: 150V }
-        elecDcRatedInputMaxVolt: ElecDcRatedInputMaxVoltAttr { val: 1000V }
+        ElecDcRatedInputMaxCurrentAttr { val: 250A }
+        ElecDcRatedInputMinVoltAttr { val: 150V }
+        ElecDcRatedInputMaxVoltAttr { val: 1000V }
         // FUTURE: add elecRef to power cabinet
       }
     }
