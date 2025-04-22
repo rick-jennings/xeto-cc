@@ -9,8 +9,14 @@ pragma: Lib <
     { lib: "ph.points.elec", versions: "0.1.x" }
     { lib: "ph.protocols", versions: "0.1.x" }
   }
+  license: "AFL-3.0"
   org: {
     dis: "Project Haystack"
     uri: "https://project-haystack.org/"
   }
+  vcs: {
+    type: "git"
+    uri:  "https://github.com/Project-Haystack/xeto-cc.git"
+  }
 >
+
