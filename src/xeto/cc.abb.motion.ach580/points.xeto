@@ -1,0 +1,94 @@
+//
+// Copyright (c) 2025, Project-Haystack
+// Licensed under the Academic Free License version 3.0
+//
+// History:
+//   21 Apr 2025  Rick Jennings  Creation
+//
+
+AbbAch580HandAutoReference : Enum {
+  off
+  hand
+  auto
+  override
+}
+
+// Sensor for the status of how the VFD is being controlled
+AbbAch580HandAutoReferenceSensor : EnumPoint & SensorPoint { enum: AbbAch580HandAutoReference }
+
+AbbAch580ActiveFaultError : Enum {
+  none
+  commError
+  overcurrent
+  overtemperature
+  overspeed
+  overvoltage
+  undervoltage
+  shortCircuit
+  groundFault
+  motorOverload
+  inverterOverload
+  motorUnderload
+  externalFault
+  operatorInterfaceError
+  configError
+  feedbackFailure
+  outputPhaseLoss
+  motorStall
+  powerUnitError
+  inputPhaseFault
+  internalFailure
+  stoActive
+  other
+}
+
+// Sensor for the most recent fault currently active on the ABB ACH580 VFD
+AbbAch580ActiveFaultErrorSensor : EnumPoint & SensorPoint { enum: AbbAch580ActiveFaultError }
+
+AbbAch580ActiveWarningError : Enum {
+  none
+  commError
+  currentLimit
+  overtemperature
+  startInterlock1
+  startInterlock2
+  startInterlock3
+  startInterlock4
+  runPermissive
+  internalWarning
+  startDelay
+  other
+}
+
+// Sensor for the most recent warning currently active on the ABB ACH580 VFD
+AbbAch580ActiveWarningErrorSensor : EnumPoint & SensorPoint { enum: AbbAch580ActiveWarningError }
+
+MotorSpeedSensor : SensorPoint {
+  speed
+  motorSpeed
+  unit: "rpm"
+}
+
+TorqueSensor : SensorPoint <abstract> { torque }
+OutputTorqueToNominalTorqueRatioSensor : TorqueSensor {
+  outputTorqueToNominalTorqueRatio
+  unit: "%"
+}
+
+OperatingTempAsPercentageToRatingSensor : SensorPoint {
+  operatingTempAsPercentageToRating
+  unit: "%"
+}
+
+MotorTempSensor : SensorPoint {
+  temp
+  tempMotor
+  unit: "°C"
+}
+
+VfdCumulativeEnergySensor : ElecAcTotalImportActiveEnergySensor { cumulativeEnergy }
+
+VfdRuntimeSensor : SensorPoint {
+  vfdRuntime
+  unit: "hr"
+}
