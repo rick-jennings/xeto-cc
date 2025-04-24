@@ -86,8 +86,6 @@ MotorTempSensor : SensorPoint {
   unit: "°C"
 }
 
-VfdCumulativeEnergySensor : ElecAcTotalImportActiveEnergySensor { cumulativeEnergy }
-
 VfdRuntimeSensor : SensorPoint {
   vfdRuntime
   unit: "hr"
