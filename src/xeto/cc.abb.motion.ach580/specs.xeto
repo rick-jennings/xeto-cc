@@ -14,73 +14,73 @@ Vfd: Equip {
 // Device model for the ABB ACH580 VFD
 AbbAch580Vfd: Vfd {
   points: {
-    outputMotorSpeedSensor: MotorSpeedSensor {
+    MotorSpeedSensor {
       output
       bacnetAddr: BacnetAddr { addr: "AV0" }
     }
-    outputElecAcFreqSensor: ElecAcFreqSensor {
+    ElecAcFreqSensor {
       output
       bacnetAddr: BacnetAddr { addr: "AV1" }
       minVal: -500Hz
       maxVal: 500Hz
     }
-    elecDcVoltSensor: ElecDcVoltSensor {
+    ElecDcVoltSensor {
       bacnetAddr: BacnetAddr { addr: "AV2" }
       minVal: 0V
       maxVal: 2000V
     }
-    outputElecAcLineAvgVoltSensor: ElecAcLineAvgVoltSensor {
+    ElecAcLineAvgVoltSensor {
       output
       bacnetAddr: BacnetAddr { addr: "AV3" }
       // TODO: confirm this is the average line voltage
     }
-    outputElecAcLineAvgCurrentSensor: ElecAcLineAvgCurrentSensor {
+    ElecAcLineAvgCurrentSensor {
       output
       bacnetAddr: BacnetAddr { addr: "AV4" }
       // TODO: confirm this is the average line current
     }
-    outputTorqueToNominalTorqueRatioSensor: OutputTorqueToNominalTorqueRatioSensor {
+    OutputTorqueToNominalTorqueRatioSensor {
       output
       bacnetAddr: BacnetAddr { addr: "AV5" }
     }
-    outputElecAcTotalImportActivePowerSensor: ElecAcTotalImportActivePowerSensor {
+    ElecAcTotalImportActivePowerSensor {
       output
       bacnetAddr: BacnetAddr { addr: "AV6" }
       // TODO: does it make sense to use output and import tags together?
     }
-    heatsinkOperatingTempAsPercentageToRatingSensor: OperatingTempAsPercentageToRatingSensor {
+    OperatingTempAsPercentageToRatingSensor {
       heatsinkTemp
       bacnetAddr: BacnetAddr { addr: "AV7" }
     }
-    vfdCumulativeEnergySensor: VfdCumulativeEnergySensor {
+    ElecAcTotalImportActiveEnergySensor {
       bacnetAddr: BacnetAddr { addr: "AV9" }
       // TODO: should we have the resettable and non-resettable options?
     }
-    vfdRuntimeSensor: VfdRuntimeSensor {
+    VfdRuntimeSensor {
       bacnetAddr: BacnetAddr { addr: "AV14" }
     }
-    motorTempSensor: MotorTempSensor {
+    MotorTempSensor {
       bacnetAddr: BacnetAddr { addr: "AV15" }
     }
-    abbAch580HandAutoReferenceSensor: AbbAch580HandAutoReferenceSensor {
+    AbbAch580HandAutoReferenceSensor {
       bacnetAddr: BacnetAddr { addr: "MSV0" }
     }
-    abbAch580ActiveFaultErrorSensor1: AbbAch580ActiveFaultErrorSensor {
+    AbbAch580ActiveFaultErrorSensor {
       bacnetAddr: BacnetAddr { addr: "MSV1" }
     }
-    abbAch580ActiveFaultErrorSensor2: AbbAch580ActiveFaultErrorSensor {
+    AbbAch580ActiveFaultErrorSensor {
       bacnetAddr: BacnetAddr { addr: "MSV2" }
     }
-    abbAch580ActiveFaultErrorSensor3: AbbAch580ActiveFaultErrorSensor {
+    AbbAch580ActiveFaultErrorSensor {
       bacnetAddr: BacnetAddr { addr: "MSV3" }
     }
-    abbAch580ActiveWarningErrorSensor1: AbbAch580ActiveWarningErrorSensor {
+    AbbAch580ActiveWarningErrorSensor {
       bacnetAddr: BacnetAddr { addr: "MSV4" }
     }
-    abbAch580ActiveWarningErrorSensor2: AbbAch580ActiveWarningErrorSensor {
+    AbbAch580ActiveWarningErrorSensor {
       bacnetAddr: BacnetAddr { addr: "MSV5" }
     }
-    abbAch580ActiveWarningErrorSensor3: AbbAch580ActiveWarningErrorSensor {
+    AbbAch580ActiveWarningErrorSensor {
       bacnetAddr: BacnetAddr { addr: "MSV6" }
     }
   }
