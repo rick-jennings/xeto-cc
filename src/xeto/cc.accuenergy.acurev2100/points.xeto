@@ -1,0 +1,17 @@
+//
+// Copyright (c) 2025, Project-Haystack
+// Licensed under the Academic Free License version 3.0
+//
+// History:
+//   25 Apr 2025  Rick Jennings  Creation
+//
+
+ElecLoadNature: Enum {
+  resistive
+  capacitive
+  inductive
+}
+
+ElecLoadNatureSensor: EnumPoint & SensorPoint {
+  enum: ElecLoadNature
+}

@@ -1,0 +1,100 @@
+//
+// Copyright (c) 2025, Project-Haystack
+// Licensed under the Academic Free License version 3.0
+//
+// History:
+//   25 Apr 2025  Rick Jennings  Creation
+//
+
+AcuRevChannel : AcElecMeter <abstract> {
+  points: {
+    ElecAcCurrentSensor { modbusAddr: ModbusAddr { encoding: "f4" } }
+    ElecAcImportActivePowerSensor { modbusAddr: ModbusAddr { encoding: "f4" } }
+    ElecAcImportReactivePowerSensor { modbusAddr: ModbusAddr { encoding: "f4" } }
+    ElecAcImportApparentPowerSensor { modbusAddr: ModbusAddr { encoding: "f4" } }
+    ElecAcPfSensor { modbusAddr: ModbusAddr { encoding: "f4" } }
+    ElecLoadNatureSensor { modbusAddr: ModbusAddr { encoding: "f4" } }
+  }
+}
+
+AcuRevFor1Phase : AcElecMeter <abstract> {
+  // Channel #1
+  AcuRevChannel {
+    ElecAcCurrentSensor {
+      modbusAddr: ModbusAddr {
+        addr: "8448",
+        dis: "Channel 1 Current"
+      }
+    }
+    ElecAcImportActivePowerSensor {
+      modbusAddr: ModbusAddr {
+        addr: "8450",
+        dis: "Channel 1 Real Power"
+      }
+    }
+    ElecAcImportReactivePowerSensor {
+      modbusAddr: ModbusAddr {
+        addr: "8452",
+        dis: "Channel 1 Reactive Power"
+      }
+    }
+    ElecAcImportApparentPowerSensor {
+      modbusAddr: ModbusAddr {
+        addr: "8454",
+        dis: "Channel 1 Apparent Power"
+      }
+    }
+    ElecAcPfSensor {
+      modbusAddr: ModbusAddr {
+        addr: "8456",
+        dis: "Channel 1 Power Factor"
+      }
+    }
+    ElecLoadNatureSensor {
+      modbusAddr: ModbusAddr {
+        addr: "8458",
+        dis: "Channel 1 Load Nature"
+      }
+    }
+  }
+
+  // Channel #2
+  AcuRevChannel {
+    ElecAcCurrentSensor {
+      modbusAddr: ModbusAddr {
+        addr: "8460",
+        dis: "Channel 2 Current"
+      }
+    }
+    ElecAcImportActivePowerSensor {
+      modbusAddr: ModbusAddr {
+        addr: "8462",
+        dis: "Channel 2 Real Power"
+      }
+    }
+    ElecAcImportReactivePowerSensor {
+      modbusAddr: ModbusAddr {
+        addr: "8464",
+        dis: "Channel 2 Reactive Power"
+      }
+    }
+    ElecAcImportApparentPowerSensor {
+      modbusAddr: ModbusAddr {
+        addr: "8466",
+        dis: "Channel 2 Apparent Power"
+      }
+    }
+    ElecAcPfSensor {
+      modbusAddr: ModbusAddr {
+        addr: "8468",
+        dis: "Channel 2 Power Factor"
+      }
+    }
+    ElecLoadNatureSensor {
+      modbusAddr: ModbusAddr {
+        addr: "8470",
+        dis: "Channel 2 Load Nature"
+      }
+    }
+  }
+}
