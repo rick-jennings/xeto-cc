@@ -7,7 +7,7 @@
 //
 
 // Device model for the Acuvim II Series Power Meter
-Acuvim2ElecMeter : AcElecMeter <abstract> {
+Acuvim2ElecMeter : AcElecMeter {
   attrs: Query {
     ManufacturerAttr { val: "Accuenergy" }
     ModelSeriesAttr { val: "Acuvim II" }
@@ -738,3 +738,4 @@ Acuvim2ElecMeter : AcElecMeter <abstract> {
 
   }
 }
+
