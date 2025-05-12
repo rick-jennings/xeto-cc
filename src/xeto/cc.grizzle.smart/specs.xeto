@@ -30,8 +30,8 @@ GrizzlESmart : EvseDispenser {
     DimensionLengthAttr { val: 10.25in }
     DimensionWidthAttr { val: 6.25in }
     DimensionHeightAttr { val: 3.75in }
-    TempRatedMinOperatingAttr { val: -30°C }
-    TempRatedMaxOperatingAttr { val: 50°C }
+    MinRatedOperatingTempAttr { val: -30°C }
+    MaxRatedOperatingTempAttr { val: 50°C }
     ElecAcRatedInputMaxCurrentAttr { val: 40A }
     ElecAcRatedInputLineToLineMinVoltAttr { val: 208V }
     ElecAcRatedInputLineToLineMaxVoltAttr { val: 240V }
