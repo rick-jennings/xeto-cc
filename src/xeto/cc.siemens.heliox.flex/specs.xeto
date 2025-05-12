@@ -32,8 +32,8 @@ HelioxFlex180kWPowerCabinet : EvsePowerConverter {
     DimensionWidthAttr { val: 32in }
     DimensionHeightAttr { val: 90in }
     WeightAttr { val: 1323lb }
-    TempRatedMinOperatingAttr { val: -13°F }
-    TempRatedMaxOperatingAttr { val: 113°F }
+    MinRatedOperatingTempAttr { val: -13°F }
+    MaxRatedOperatingTempAttr { val: 113°F }
     ElecAcRatedInputLineToLineNominalVoltAttr { val: 480V }
     ElecAcRatedInputMaxCurrentAttr { val: 246A }
     ElecAcRatedInputFreqAttr { val: 60Hz }
@@ -55,8 +55,8 @@ HelioxFlex250ADispenser : EvseDispenser {
     DimensionWidthAttr { val: 18in }
     DimensionHeightAttr { val: 55in }
     WeightAttr { val: 220lb }
-    TempRatedMinOperatingAttr { val: -13°F }
-    TempRatedMaxOperatingAttr { val: 113°F }
+    MinRatedOperatingTempAttr { val: -13°F }
+    MaxRatedOperatingTempAttr { val: 113°F }
   }
   points: {
     OcppChargePointStatusSensor

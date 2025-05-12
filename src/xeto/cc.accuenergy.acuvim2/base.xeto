@@ -14,8 +14,8 @@ Acuvim2ElecMeter : AcElecMeter {
     DimensionLengthAttr { val: 96mm }
     DimensionWidthAttr { val: 96mm }
     DimensionHeightAttr { val: 64.3mm }
-    TempRatedMinOperatingAttr { val: -25°C }
-    TempRatedMaxOperatingAttr { val: 70°C }
+    MinRatedOperatingTempAttr { val: -25°C }
+    MaxRatedOperatingTempAttr { val: 70°C }
   }
   points: {
     ElecAcFreqSensor {
