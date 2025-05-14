@@ -8,6 +8,12 @@
 
 // Device model for the Acuvim II Series Power Meter
 Acuvim2ElecMeter : AcElecMeter {
+  resources: Query {
+    PdfFile {
+      dis: "Acuvim II Series Power Meter User Manual"
+      uri: "https://accucdn.accuenergy.com/wp-content/uploads/Acuvim-II-Power-Meter-User-Manual-1040E1303.pdf"
+    }
+  }
   attrs: Query {
     ManufacturerAttr { val: "Accuenergy" }
     ModelSeriesAttr { val: "Acuvim II" }
