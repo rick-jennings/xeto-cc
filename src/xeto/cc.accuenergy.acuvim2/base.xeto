@@ -277,17 +277,17 @@ Acuvim2ElecMeter : AcElecMeter {
       modbusAddr: ModbusAddr { addr: "17974", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI60" }
     }
-    ElecAcLineNetApparentEnergySensor {
+    ElecAcPhaseNetApparentEnergySensor {
       phaseEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "17976", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI61" }
     }
-    ElecAcLineNetApparentEnergySensor {
+    ElecAcPhaseNetApparentEnergySensor {
       phaseEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "17978", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI62" }
     }
-    ElecAcLineNetApparentEnergySensor {
+    ElecAcPhaseNetApparentEnergySensor {
       phaseEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "17980", encoding: "f4", scale: "0.1" }
       bacnetAddr: BacnetAddr { addr: "AI63" }
@@ -584,152 +584,152 @@ Acuvim2ElecMeter : AcElecMeter {
     ElecAcTotalPfSensor {
       modbusAddr: ModbusAddr { addr: "50102", encoding: "s2" }
     }
-    ElecAcLinePfSensor {
-      linePf: "L1"
+    ElecAcPhasePfSensor {
+      phasePf: "L1"
       modbusAddr: ModbusAddr { addr: "50103", encoding: "s2" }
     }
-    ElecAcLinePfSensor {
-      linePf: "L2"
+    ElecAcPhasePfSensor {
+      phasePf: "L2"
       modbusAddr: ModbusAddr { addr: "50104", encoding: "s2" }
     }
-    ElecAcLinePfSensor {
-      linePf: "L3"
+    ElecAcPhasePfSensor {
+      phasePf: "L3"
       modbusAddr: ModbusAddr { addr: "50105", encoding: "s2" }
     }
     ElecAcTotalExportActiveEnergySensor {
       modbusAddr: ModbusAddr { addr: "50107", encoding: "u4" }
     }
-    ElecAcLineExportActiveEnergySensor {
-      lineEnergy: "L1"
+    ElecAcPhaseExportActiveEnergySensor {
+      phaseEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "50109", encoding: "u4" }
     }
-    ElecAcLineExportActiveEnergySensor {
-      lineEnergy: "L2"
+    ElecAcPhaseExportActiveEnergySensor {
+      phaseEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "50111", encoding: "u4" }
     }
-    ElecAcLineExportActiveEnergySensor {
-      lineEnergy: "L3"
+    ElecAcPhaseExportActiveEnergySensor {
+      phaseEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "50113", encoding: "u4" }
     }
     ElecAcTotalImportActiveEnergySensor {
       modbusAddr: ModbusAddr { addr: "50115", encoding: "u4" }
     }
-    ElecAcLineImportActiveEnergySensor {
-      lineEnergy: "L1"
+    ElecAcPhaseImportActiveEnergySensor {
+      phaseEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "50117", encoding: "u4" }
     }
-    ElecAcLineImportActiveEnergySensor {
-      lineEnergy: "L2"
+    ElecAcPhaseImportActiveEnergySensor {
+      phaseEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "50119", encoding: "u4" }
     }
-    ElecAcLineImportActiveEnergySensor {
-      lineEnergy: "L3"
+    ElecAcPhaseImportActiveEnergySensor {
+      phaseEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "50121", encoding: "u4" }
     }
     ElecAcTotalExportApparentEnergySensor {
       modbusAddr: ModbusAddr { addr: "50124", encoding: "u4" }
     }
-    ElecAcLineExportApparentEnergySensor {
-      lineEnergy: "L1"
+    ElecAcPhaseExportApparentEnergySensor {
+      phaseEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "50126", encoding: "u4" }
     }
-    ElecAcLineExportApparentEnergySensor {
-      lineEnergy: "L2"
+    ElecAcPhaseExportApparentEnergySensor {
+      phaseEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "50128", encoding: "u4" }
     }
-    ElecAcLineExportApparentEnergySensor {
-      lineEnergy: "L3"
+    ElecAcPhaseExportApparentEnergySensor {
+      phaseEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "50130", encoding: "u4" }
     }
     ElecAcTotalImportApparentEnergySensor {
       modbusAddr: ModbusAddr { addr: "50132", encoding: "u4" }
     }
-    ElecAcLineImportApparentEnergySensor {
-      lineEnergy: "L1"
+    ElecAcPhaseImportApparentEnergySensor {
+      phaseEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "50134", encoding: "u4" }
     }
-    ElecAcLineImportApparentEnergySensor {
-      lineEnergy: "L2"
+    ElecAcPhaseImportApparentEnergySensor {
+      phaseEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "50136", encoding: "u4" }
     }
-    ElecAcLineImportApparentEnergySensor {
-      lineEnergy: "L3"
+    ElecAcPhaseImportApparentEnergySensor {
+      phaseEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "50138", encoding: "u4" }
     }
     ElecAcTotalImportReactiveEnergySensor {
       elecQuadrant: "1"
       modbusAddr: ModbusAddr { addr: "50141", encoding: "u4" }
     }
-    ElecAcLineImportReactiveEnergySensor {
+    ElecAcPhaseImportReactiveEnergySensor {
       elecQuadrant: "1"
-      lineEnergy: "L1"
+      phaseEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "50143", encoding: "u4" }
     }
-    ElecAcLineImportReactiveEnergySensor {
+    ElecAcPhaseImportReactiveEnergySensor {
       elecQuadrant: "1"
-      lineEnergy: "L2"
+      phaseEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "50145", encoding: "u4" }
     }
-    ElecAcLineImportReactiveEnergySensor {
+    ElecAcPhaseImportReactiveEnergySensor {
       elecQuadrant: "1"
-      lineEnergy: "L3"
+      phaseEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "50174", encoding: "u4" }
     }
     ElecAcTotalImportReactiveEnergySensor {
       elecQuadrant: "2"
       modbusAddr: ModbusAddr { addr: "50149", encoding: "u4" }
     }
-    ElecAcLineImportReactiveEnergySensor {
+    ElecAcPhaseImportReactiveEnergySensor {
       elecQuadrant: "2"
-      lineEnergy: "L1"
+      phaseEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "50151", encoding: "u4" }
     }
-    ElecAcLineImportReactiveEnergySensor {
+    ElecAcPhaseImportReactiveEnergySensor {
       elecQuadrant: "2"
-      lineEnergy: "L2"
+      phaseEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "50153", encoding: "u4" }
     }
-    ElecAcLineImportReactiveEnergySensor {
+    ElecAcPhaseImportReactiveEnergySensor {
       elecQuadrant: "2"
-      lineEnergy: "L3"
+      phaseEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "50155", encoding: "u4" }
     }
     ElecAcTotalExportReactiveEnergySensor {
       elecQuadrant: "3"
       modbusAddr: ModbusAddr { addr: "50157", encoding: "u4" }
     }
-    ElecAcLineExportReactiveEnergySensor {
+    ElecAcPhaseExportReactiveEnergySensor {
       elecQuadrant: "3"
-      lineEnergy: "L1"
+      phaseEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "50159", encoding: "u4" }
     }
-    ElecAcLineExportReactiveEnergySensor {
+    ElecAcPhaseExportReactiveEnergySensor {
       elecQuadrant: "3"
-      lineEnergy: "L2"
+      phaseEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "50161", encoding: "u4" }
     }
-    ElecAcLineExportReactiveEnergySensor {
+    ElecAcPhaseExportReactiveEnergySensor {
       elecQuadrant: "3"
-      lineEnergy: "L3"
+      phaseEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "50163", encoding: "u4" }
     }
     ElecAcTotalExportReactiveEnergySensor {
       elecQuadrant: "4"
       modbusAddr: ModbusAddr { addr: "50165", encoding: "u4" }
     }
-    ElecAcLineExportReactiveEnergySensor {
+    ElecAcPhaseExportReactiveEnergySensor {
       elecQuadrant: "4"
-      lineEnergy: "L1"
+      phaseEnergy: "L1"
       modbusAddr: ModbusAddr { addr: "50167", encoding: "u4" }
     }
-    ElecAcLineExportReactiveEnergySensor {
+    ElecAcPhaseExportReactiveEnergySensor {
       elecQuadrant: "4"
-      lineEnergy: "L2"
+      phaseEnergy: "L2"
       modbusAddr: ModbusAddr { addr: "50169", encoding: "u4" }
     }
-    ElecAcLineExportReactiveEnergySensor {
+    ElecAcPhaseExportReactiveEnergySensor {
       elecQuadrant: "4"
-      lineEnergy: "L3"
+      phaseEnergy: "L3"
       modbusAddr: ModbusAddr { addr: "50171", encoding: "u4" }
     }
     */
