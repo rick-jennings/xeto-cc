@@ -6,8 +6,6 @@ Please note not all points supported by the Acuvim II are defined.  These specs 
 
 There are Project Haystack community initiatives to validate and improve these specs so that system integrators can have confidence in using them.  Also, we would welcome any feedback that you have to improve these specs.
 
-[Acuvim II user manual](https://accucdn.accuenergy.com/wp-content/uploads/Acuvim-II-Power-Meter-User-Manual-1040E1303.pdf)
-
 ## Meter configuration requirements
 
 These configuration settings must be applied to the Acuvim II for the Xeto specs to be semantically correct:

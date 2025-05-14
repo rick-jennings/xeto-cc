@@ -12,111 +12,111 @@ Acuvim2ElecMeter1LNOr1LLOr3LN : Acuvim2ElecMeter {
     ElecAcPhaseMetricVoltSensor {
       totalHarmonicDistortion
       phaseVolt: "L1-N"
-      modbusAddr: ModbusAddr { addr: "16474", encoding: "s2", scale: "0.01" }
+      modbusAddr: ModbusAddr { addr: "16474", encoding: "s2", scale: "0.01", dis: "THD_V1" }
       bacnetAddr: BacnetAddr { addr: "AI64" }
     }
     ElecAcPhaseMetricVoltSensor {
       totalHarmonicDistortion
       phaseVolt: "L2-N"
-      modbusAddr: ModbusAddr { addr: "16475", encoding: "s2", scale: "0.01" }
+      modbusAddr: ModbusAddr { addr: "16475", encoding: "s2", scale: "0.01", dis: "THD_V2" }
       bacnetAddr: BacnetAddr { addr: "AI65" }
     }
     ElecAcPhaseMetricVoltSensor {
       totalHarmonicDistortion
       phaseVolt: "L3-N"
-      modbusAddr: ModbusAddr { addr: "16476", encoding: "s2", scale: "0.01" }
+      modbusAddr: ModbusAddr { addr: "16476", encoding: "s2", scale: "0.01", dis: "THD_V3" }
       bacnetAddr: BacnetAddr { addr: "AI66" }
     }
     ElecAcPhaseAvgMetricVoltSensor {
       totalHarmonicDistortion
-      modbusAddr: ModbusAddr { addr: "16477", encoding: "s2", scale: "0.01" }
+      modbusAddr: ModbusAddr { addr: "16477", encoding: "s2", scale: "0.01", dis: "THD_avg" }
       bacnetAddr: BacnetAddr { addr: "AI67" }
     }
     ElecAcPhaseMetricVoltSensor {
       elecAcHarmonicOrder: 2
       individualHarmonicDistortion
       phaseVolt: "L1-N"
-      modbusAddr: ModbusAddr { addr: "16482", encoding: "s2", scale: "0.01" }
+      modbusAddr: ModbusAddr { addr: "16482", encoding: "s2", scale: "0.01", dis: "V1 2nd Harmonic" }
     }
     ElecAcPhaseMetricVoltSensor {
       elecAcHarmonicOrder: 3
       individualHarmonicDistortion
       phaseVolt: "L1-N"
-      modbusAddr: ModbusAddr { addr: "16483", encoding: "s2", scale: "0.01" }
+      modbusAddr: ModbusAddr { addr: "16483", encoding: "s2", scale: "0.01", dis: "V1 3rd Harmonic" }
     }
     ElecAcPhaseMetricVoltSensor {
       elecAcHarmonicOrder: 4
       individualHarmonicDistortion
       phaseVolt: "L1-N"
-      modbusAddr: ModbusAddr { addr: "16484", encoding: "s2", scale: "0.01" }
+      modbusAddr: ModbusAddr { addr: "16484", encoding: "s2", scale: "0.01", dis: "V1 4th Harmonic" }
     }
     ElecAcPhaseMetricVoltSensor {
       elecAcHarmonicOrder: 5
       individualHarmonicDistortion
       phaseVolt: "L1-N"
-      modbusAddr: ModbusAddr { addr: "16485", encoding: "s2", scale: "0.01" }
+      modbusAddr: ModbusAddr { addr: "16485", encoding: "s2", scale: "0.01", dis: "V1 5th Harmonic" }
     }
     ElecAcPhaseMetricVoltSensor {
       elecAcHarmonicOrder: 6
       individualHarmonicDistortion
       phaseVolt: "L1-N"
-      modbusAddr: ModbusAddr { addr: "16486", encoding: "s2", scale: "0.01" }
+      modbusAddr: ModbusAddr { addr: "16486", encoding: "s2", scale: "0.01", dis: "V1 6th Harmonic" }
     }
     ElecAcPhaseMetricVoltSensor {
       elecAcHarmonicOrder: 7
       individualHarmonicDistortion
       phaseVolt: "L1-N"
-      modbusAddr: ModbusAddr { addr: "16487", encoding: "s2", scale: "0.01" }
+      modbusAddr: ModbusAddr { addr: "16487", encoding: "s2", scale: "0.01", dis: "V1 7th Harmonic" }
     }
     ElecAcPhaseMetricVoltSensor {
       elecAcHarmonicOrder: 8
       individualHarmonicDistortion
       phaseVolt: "L1-N"
-      modbusAddr: ModbusAddr { addr: "16488", encoding: "s2", scale: "0.01" }
+      modbusAddr: ModbusAddr { addr: "16488", encoding: "s2", scale: "0.01", dis: "V1 8th Harmonic" }
     }
     ElecAcPhaseMetricVoltSensor {
       elecAcHarmonicOrder: 9
       individualHarmonicDistortion
       phaseVolt: "L1-N"
-      modbusAddr: ModbusAddr { addr: "16489", encoding: "s2", scale: "0.01" }
+      modbusAddr: ModbusAddr { addr: "16489", encoding: "s2", scale: "0.01", dis: "V1 9th Harmonic" }
     }
     ElecAcPhaseMetricVoltSensor {
       elecAcHarmonicOrder: 10
       individualHarmonicDistortion
       phaseVolt: "L1-N"
-      modbusAddr: ModbusAddr { addr: "16490", encoding: "s2", scale: "0.01" }
+      modbusAddr: ModbusAddr { addr: "16490", encoding: "s2", scale: "0.01", dis: "V1 10th Harmonic" }
     }
     ElecAcPhaseMetricVoltSensor {
       elecAcHarmonicOrder: 11
       individualHarmonicDistortion
       phaseVolt: "L1-N"
-      modbusAddr: ModbusAddr { addr: "16491", encoding: "s2", scale: "0.01" }
+      modbusAddr: ModbusAddr { addr: "16491", encoding: "s2", scale: "0.01", dis: "V1 11th Harmonic" }
     }
     ElecAcPhaseMetricVoltSensor {
       elecAcHarmonicOrder: 12
       individualHarmonicDistortion
       phaseVolt: "L1-N"
-      modbusAddr: ModbusAddr { addr: "16492", encoding: "s2", scale: "0.01" }
+      modbusAddr: ModbusAddr { addr: "16492", encoding: "s2", scale: "0.01", dis: "V1 12th Harmonic" }
     }
     ElecAcPhaseMetricVoltSensor {
       elecAcHarmonicOrder: 13
       individualHarmonicDistortion
       phaseVolt: "L1-N"
-      modbusAddr: ModbusAddr { addr: "16493", encoding: "s2", scale: "0.01" }
+      modbusAddr: ModbusAddr { addr: "16493", encoding: "s2", scale: "0.01", dis: "V1 13th Harmonic" }
     }
     ElecAcPhaseMetricVoltSensor {
       elecAcHarmonicOrder: 14
       individualHarmonicDistortion
       phaseVolt: "L1-N"
-      modbusAddr: ModbusAddr { addr: "16494", encoding: "s2", scale: "0.01" }
+      modbusAddr: ModbusAddr { addr: "16494", encoding: "s2", scale: "0.01", dis: "V1 14th Harmonic" }
     }
     ElecAcLineAngleVoltSensor {
       lineVolt: "L1-L2"
-      modbusAddr: ModbusAddr { addr: "17056", encoding: "u2", scale: "0.1" }
+      modbusAddr: ModbusAddr { addr: "17056", encoding: "u2", scale: "0.1", dis: "Phase Angle of V2 to V1" }
     }
     ElecAcLineAngleVoltSensor {
       lineVolt: "L3-L1"
-      modbusAddr: ModbusAddr { addr: "17057", encoding: "u2", scale: "0.1" }
+      modbusAddr: ModbusAddr { addr: "17057", encoding: "u2", scale: "0.1", dis: "Phase Angle of V3 to V1" }
     }
   }
 }
