@@ -24,17 +24,17 @@ AbbAch580Vfd: Vfd {
       minVal: -500Hz
       maxVal: 500Hz
     }
-    ElecDcVoltSensor {
+    ElecDcVoltageSensor {
       bacnetAddr: BacnetAddr { addr: "AV2" }
       minVal: 0V
       maxVal: 2000V
     }
-    ElecAcLineAvgVoltSensor {
+    ElecAcLLAvgRmsVoltageSensor {
       output
       bacnetAddr: BacnetAddr { addr: "AV3" }
       // TODO: confirm this is the average line voltage
     }
-    ElecAcLineAvgCurrentSensor {
+    ElecAcLAvgUnsignedRmsCurrentSensor {
       output
       bacnetAddr: BacnetAddr { addr: "AV4" }
       // TODO: confirm this is the average line current

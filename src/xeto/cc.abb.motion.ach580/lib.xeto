@@ -7,7 +7,7 @@ pragma: Lib <
     { lib: "ph.equips" }
     { lib: "ph.attrs" }
     { lib: "ph.points" }
-    { lib: "ph.points.elec" }
+    { lib: "ph.elec" }
     { lib: "ph.protocols" }
   }
   license: "AFL-3.0"

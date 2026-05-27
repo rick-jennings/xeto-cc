@@ -16,7 +16,7 @@ OcppDcEvsePort : EvsePort & DcElecMeter {
     ElecDcImportPowerMaxSp
     ElecDcImportCurrentSensor
     ElecDcImportPowerSensor
-    ElecDcVoltSensor
+    ElecDcVoltageSensor
     ElecDcImportEnergySensor
   }
 }
