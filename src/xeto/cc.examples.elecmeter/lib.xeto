@@ -5,6 +5,7 @@ pragma: Lib <
     { lib: "sys" }
     { lib: "ph" }
     { lib: "ph.points" }
+    { lib: "ph.elec" }
   }
   license: "AFL-3.0"
   org: {
