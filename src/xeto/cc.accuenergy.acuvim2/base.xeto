@@ -29,17 +29,17 @@ Acuvim2ElecMeter : AcElecMeter {
       bacnetAddr: BacnetAddr { addr: "AI1", dis: "Frequency" }
     }
     ElecAcPhaseRmsVoltageSensor {
-      phase: "L1-N"
+      phase: "L1"
       modbusAddr: ModbusAddr { addr: "16386", encoding: "f4", dis: "Phase 1 Voltage" }
       bacnetAddr: BacnetAddr { addr: "AI2", dis: "Phase A Voltage" }
     }
     ElecAcPhaseRmsVoltageSensor {
-      phase: "L2-N"
+      phase: "L2"
       modbusAddr: ModbusAddr { addr: "16388", encoding: "f4", dis: "Phase 2 Voltage" }
       bacnetAddr: BacnetAddr { addr: "AI3", dis: "Phase B Voltage" }
     }
     ElecAcPhaseRmsVoltageSensor {
-      phase: "L3-N"
+      phase: "L3"
       modbusAddr: ModbusAddr { addr: "16390", encoding: "f4", dis: "Phase 3 Voltage" }
       bacnetAddr: BacnetAddr { addr: "AI4", dis: "Phase C Voltage" }
     }
@@ -331,15 +331,15 @@ Acuvim2ElecMeter : AcElecMeter {
       modbusAddr: ModbusAddr { addr: "12288", encoding: "f4", dis: "Frequency" }
     }
     ElecAcPhaseRmsVoltageSensor {
-      phase: "L1-N"
+      phase: "L1"
       modbusAddr: ModbusAddr { addr: "12290", encoding: "f4", dis: "Phase 1 Voltage" }
     }
     ElecAcPhaseRmsVoltageSensor {
-      phase: "L2-N"
+      phase: "L2"
       modbusAddr: ModbusAddr { addr: "12292", encoding: "f4", dis: "Phase 2 Voltage" }
     }
     ElecAcPhaseRmsVoltageSensor {
-      phase: "L3-N"
+      phase: "L3"
       modbusAddr: ModbusAddr { addr: "12294", encoding: "f4", dis: "Phase 3 Voltage" }
     }
     ElecAcLAvgRmsVoltageSensor {
@@ -513,15 +513,15 @@ Acuvim2ElecMeter : AcElecMeter {
       modbusAddr: ModbusAddr { addr: "50076", encoding: "s2", dis: "Voltage: Average Phase" }
     }
     ElecAcPhaseRmsVoltageSensor {
-      phase: "L1-N"
+      phase: "L1"
       modbusAddr: ModbusAddr { addr: "50077", encoding: "s2", dis: "Voltage: Phase A" }
     }
     ElecAcPhaseRmsVoltageSensor {
-      phase: "L2-N"
+      phase: "L2"
       modbusAddr: ModbusAddr { addr: "50078", encoding: "s2", dis: "Voltage: Phase B" }
     }
     ElecAcPhaseRmsVoltageSensor {
-      phase: "L3-N"
+      phase: "L3"
       modbusAddr: ModbusAddr { addr: "50079", encoding: "s2", dis: "Voltage: Phase C" }
     }
     ElecAcLLAvgRmsVoltageSensor {
