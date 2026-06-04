@@ -11,19 +11,19 @@ Acuvim2ElecMeter1LNOr1LLOr3LN : Acuvim2ElecMeter {
   points: {
     ElecAcPhaseQualityVoltageSensor {
       totalHarmonicDistortion
-      phase: "L1-N"
+      phase: "L1"
       modbusAddr: ModbusAddr { addr: "16474", encoding: "s2", scale: "0.01", dis: "THD_V1" }
       bacnetAddr: BacnetAddr { addr: "AI64" }
     }
     ElecAcPhaseQualityVoltageSensor {
       totalHarmonicDistortion
-      phase: "L2-N"
+      phase: "L2"
       modbusAddr: ModbusAddr { addr: "16475", encoding: "s2", scale: "0.01", dis: "THD_V2" }
       bacnetAddr: BacnetAddr { addr: "AI65" }
     }
     ElecAcPhaseQualityVoltageSensor {
       totalHarmonicDistortion
-      phase: "L3-N"
+      phase: "L3"
       modbusAddr: ModbusAddr { addr: "16476", encoding: "s2", scale: "0.01", dis: "THD_V3" }
       bacnetAddr: BacnetAddr { addr: "AI66" }
     }
@@ -35,79 +35,79 @@ Acuvim2ElecMeter1LNOr1LLOr3LN : Acuvim2ElecMeter {
     ElecAcPhaseQualityVoltageSensor {
       elecAcHarmonicOrder: 2
       individualHarmonicDistortion
-      phase: "L1-N"
+      phase: "L1"
       modbusAddr: ModbusAddr { addr: "16482", encoding: "s2", scale: "0.01", dis: "V1 2nd Harmonic" }
     }
     ElecAcPhaseQualityVoltageSensor {
       elecAcHarmonicOrder: 3
       individualHarmonicDistortion
-      phase: "L1-N"
+      phase: "L1"
       modbusAddr: ModbusAddr { addr: "16483", encoding: "s2", scale: "0.01", dis: "V1 3rd Harmonic" }
     }
     ElecAcPhaseQualityVoltageSensor {
       elecAcHarmonicOrder: 4
       individualHarmonicDistortion
-      phase: "L1-N"
+      phase: "L1"
       modbusAddr: ModbusAddr { addr: "16484", encoding: "s2", scale: "0.01", dis: "V1 4th Harmonic" }
     }
     ElecAcPhaseQualityVoltageSensor {
       elecAcHarmonicOrder: 5
       individualHarmonicDistortion
-      phase: "L1-N"
+      phase: "L1"
       modbusAddr: ModbusAddr { addr: "16485", encoding: "s2", scale: "0.01", dis: "V1 5th Harmonic" }
     }
     ElecAcPhaseQualityVoltageSensor {
       elecAcHarmonicOrder: 6
       individualHarmonicDistortion
-      phase: "L1-N"
+      phase: "L1"
       modbusAddr: ModbusAddr { addr: "16486", encoding: "s2", scale: "0.01", dis: "V1 6th Harmonic" }
     }
     ElecAcPhaseQualityVoltageSensor {
       elecAcHarmonicOrder: 7
       individualHarmonicDistortion
-      phase: "L1-N"
+      phase: "L1"
       modbusAddr: ModbusAddr { addr: "16487", encoding: "s2", scale: "0.01", dis: "V1 7th Harmonic" }
     }
     ElecAcPhaseQualityVoltageSensor {
       elecAcHarmonicOrder: 8
       individualHarmonicDistortion
-      phase: "L1-N"
+      phase: "L1"
       modbusAddr: ModbusAddr { addr: "16488", encoding: "s2", scale: "0.01", dis: "V1 8th Harmonic" }
     }
     ElecAcPhaseQualityVoltageSensor {
       elecAcHarmonicOrder: 9
       individualHarmonicDistortion
-      phase: "L1-N"
+      phase: "L1"
       modbusAddr: ModbusAddr { addr: "16489", encoding: "s2", scale: "0.01", dis: "V1 9th Harmonic" }
     }
     ElecAcPhaseQualityVoltageSensor {
       elecAcHarmonicOrder: 10
       individualHarmonicDistortion
-      phase: "L1-N"
+      phase: "L1"
       modbusAddr: ModbusAddr { addr: "16490", encoding: "s2", scale: "0.01", dis: "V1 10th Harmonic" }
     }
     ElecAcPhaseQualityVoltageSensor {
       elecAcHarmonicOrder: 11
       individualHarmonicDistortion
-      phase: "L1-N"
+      phase: "L1"
       modbusAddr: ModbusAddr { addr: "16491", encoding: "s2", scale: "0.01", dis: "V1 11th Harmonic" }
     }
     ElecAcPhaseQualityVoltageSensor {
       elecAcHarmonicOrder: 12
       individualHarmonicDistortion
-      phase: "L1-N"
+      phase: "L1"
       modbusAddr: ModbusAddr { addr: "16492", encoding: "s2", scale: "0.01", dis: "V1 12th Harmonic" }
     }
     ElecAcPhaseQualityVoltageSensor {
       elecAcHarmonicOrder: 13
       individualHarmonicDistortion
-      phase: "L1-N"
+      phase: "L1"
       modbusAddr: ModbusAddr { addr: "16493", encoding: "s2", scale: "0.01", dis: "V1 13th Harmonic" }
     }
     ElecAcPhaseQualityVoltageSensor {
       elecAcHarmonicOrder: 14
       individualHarmonicDistortion
-      phase: "L1-N"
+      phase: "L1"
       modbusAddr: ModbusAddr { addr: "16494", encoding: "s2", scale: "0.01", dis: "V1 14th Harmonic" }
     }
     ElecAcPhaseAngleVoltageSensor {
