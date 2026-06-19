@@ -1,0 +1,26 @@
+//
+// Copyright (c) 2026, Project-Haystack
+// Licensed under the Academic Free License version 3.0
+//
+// History:
+//   19 Jun 2026  Rick Jennings  Creation
+//
+
+ElecAcMeter: AcElecMeter
+ElecAcMeterPlaceholderEquip: Dict
+
+// An AC electric meter connected to a 3-phase, wye electrical system
+// with a neutral.
+ElecAc3PhaseWyeNeutralMeter: ElecAcMeterPlaceholderEquip
+
+// An AC electric meter connected to a 3-phase, delta electrical system
+// with no neutral.
+ElecAc3PhaseDeltaMeter: ElecAcMeterPlaceholderEquip
+
+// An AC electric meter connected to a split-phase electrical system
+// with a neutral.
+ElecAcSplitPhaseNeutralMeter: ElecAcMeterPlaceholderEquip
+
+// An AC electric meter connected to a single-phase electrical source
+// with a neutral.
+ElecAc1PhaseNeutralMeter: ElecAcMeterPlaceholderEquip
