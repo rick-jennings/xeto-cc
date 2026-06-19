@@ -6,8 +6,8 @@
 //   28 Feb 2025  Rick Jennings  Creation
 //
 
-// Device model for the Acuvim II Series Power Meter
-Acuvim2ElecMeter : AcElecMeter {
+// Device model for Accuenergy's Acuvim II Series Power Meter
+Acuvim2ElecAcMeter : ElecAcMeter <abstract> {
   resources: Query {
     PdfFile {
       dis: "Acuvim II Series Power Meter User Manual"

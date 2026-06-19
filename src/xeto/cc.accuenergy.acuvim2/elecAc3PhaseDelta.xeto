@@ -6,8 +6,9 @@
 //   15 Apr 2025  Rick Jennings  Creation
 //
 
-// Device model for the Acuvim II Series Power Meter (2LL or 3LL wiring)
-Acuvim2ElecMeter2LLOr3LL : Acuvim2ElecMeter {
+// Device model for Accuenergy's Acuvim II Series Power Meter connected to a
+// 3-phase, delta electrical system with no neutral.
+Acuvim2ElecAc3PhaseDeltaMeter : Acuvim2ElecAcMeter & ElecAc3PhaseDeltaMeter {
   points: {
     ElecAcPhaseQualityVoltageSensor {
       totalHarmonicDistortion

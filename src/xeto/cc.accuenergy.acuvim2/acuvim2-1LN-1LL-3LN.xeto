@@ -6,8 +6,8 @@
 //   15 Apr 2025  Rick Jennings  Creation
 //
 
-// Device model for the Acuvim II Series Power Meter (1LN, 1LL, 3LN, or 3LN-2.5 wiring)
-Acuvim2ElecMeter1LNOr1LLOr3LN : Acuvim2ElecMeter {
+// Device model for Accuenergy's Acuvim II Series Power Meter (1LN, 1LL, 3LN, or 3LN-2.5 wiring)
+Acuvim2ElecAc1LNOr1LLOr3LNMeter : Acuvim2ElecAcMeter <abstract> {
   points: {
     ElecAcPhaseQualityVoltageSensor {
       totalHarmonicDistortion
